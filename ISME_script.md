@@ -10,6 +10,7 @@ output:
         toc_float: true
         number_section: yes
         keep_md: true
+        self_contained: yes
 ---
 
 
@@ -53,7 +54,7 @@ milk<-milk[milk[,8]>0,]
 boxplot(MILK_CONSUMED_RABBIT~AGE, data=milk, main="Original data")
 ```
 
-![](fig/cleaning data-1.png)<!-- -->
+![raw_data_milk](fig/cleaning data-1.png)<!-- -->
 
 ```r
 SEmilk<-summarySE(milk, measurevar="MILK_CONSUMED_RABBIT", groupvars=c("AGE"), na.rm=TRUE)
