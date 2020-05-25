@@ -131,7 +131,7 @@ anova(mod_milkc)
 ```r
 milk$AGE<-as.factor(milk$AGE)
 synth_milk<-summary(MILK_CONSUMED_RABBIT~AGE, method="cross", fun=smean.sd, data=milk)
-datatable(synth_milk, colnames=c("Age", "milk consumed (g/rabbit)", "N portees", "NA")) %>% formatRound(columns=c('AGE', 'S', 'N', 'Missing'), digits=1)
+DT::datatable(synth_milk, colnames=c("Age", "milk consumed (g/rabbit)", "N portees", "NA")) %>% formatRound(columns=c('AGE', 'S', 'N', 'Missing'), digits=1)
 ```
 
 <div id="htmlwidget-bec9a0eda34830abc2fa" style="width:100%;height:auto;" class="datatables html-widget"></div>
