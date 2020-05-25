@@ -129,9 +129,44 @@ anova(mod_milkc)
 
 ```r
 milk$AGE<-as.factor(milk$AGE)
-synth_milk<-summary(MILK_CONSUMED_RABBIT~AGE, method="cross", fun=smean.sd, data=milk)
-DT::datatable(synth_milk, colnames=c("Age", "milk consumed (g/rabbit)", "N portees", "NA")) %>% formatRound(columns=c('AGE', 'S', 'N', 'Missing'), digits=1)
+synth_milk<-summary(MILK_CONSUMED_RABBIT~AGE*GROUP, method="cross", fun=smean.sd, data=milk)
+knitr::kable(synth_milk)
 ```
 
-<!--html_preserve--><div id="htmlwidget-b7aef3e860e02a93b3fc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b7aef3e860e02a93b3fc">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7"],["3","7","10","14","17","21","ALL"],[[14.5729166666667,5.57138355494504],[25.3575434782609,5.38415038466927],[29.9905217391304,4.12034891046394],[25.6603829787234,6.1277019401673],[33.2106956521739,4.92422716720126],[44.7941,5.66438158374908],[27.1743992094862,9.57162508607666]],[48,46,46,47,46,20,253],[0,0,1,0,0,27,28]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Age<\/th>\n      <th>milk consumed (g/rabbit)<\/th>\n      <th>N portees<\/th>\n      <th>NA<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 1, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
+```
+## Warning in `[<-.data.frame`(`*tmp*`, , isn, value = structure(list(S.Mean =
+## c("14.243750", : provided 4 variables to replace 3 variables
+```
+
+
+
+AGE   GROUP            S          N   Missing
+----  ------  ----------  ---------  --------
+3     RFFP     14.243750   5.638672        16
+7     RFFP     25.788133   3.571074        15
+10    RFFP     30.051867   2.928492        15
+14    RFFP     27.251667   5.350338        15
+17    RFFP     31.371667   4.999990        15
+21    RFFP     47.210667   8.870512         6
+ALL   RFFP     27.172122   9.571706        82
+3     STAN     14.256250   5.206402        16
+7     STAN     25.975000   7.041085        15
+10    STAN     30.097750   4.290657        16
+14    STAN     26.751188   5.833428        16
+17    STAN     34.444067   5.446000        15
+21    STAN     44.432571   4.633413         7
+ALL   STAN     27.705847   9.829592        85
+3     STAP     15.218750   6.139296        16
+7     STAP     24.375000   5.215042        16
+10    STAP     29.814800   5.120427        15
+14    STAP     23.077750   6.594455        16
+17    STAP     33.778500   4.059805        16
+21    STAP     43.084286   2.271570         7
+ALL   STAP     26.651302   9.394942        86
+3     ALL      14.572917   5.571384        48
+7     ALL      25.357543   5.384150        46
+10    ALL      29.990522   4.120349        46
+14    ALL      25.660383   6.127702        47
+17    ALL      33.210696   4.924227        46
+21    ALL      44.794100   5.664382        20
+ALL   ALL      27.174399   9.571625       253
