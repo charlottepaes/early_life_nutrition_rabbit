@@ -265,7 +265,7 @@ ggplot(intakegeltot, aes(x=GROUP, y=GEL_INGESTION_CORRECTED_RABBIT)) + geom_boxp
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) 
 ```
 
-![](ISME_script_files/figure-html/analysis total gel ingestion-1.png)<!-- -->
+![](fig/analysis%20total%20gel%20ingestion-1.png)<!-- -->
 
 ## Pellet consumption
 
@@ -276,7 +276,6 @@ Daily pellet consumption is provided, i.e, the difference of weight (food offere
 ### Statistics daily consumption
 
 Does daily pellets consumption differ between the three experimental groups ? 
-
 
 ```r
 intakepellet<-read.table("Pellet_consumption.csv", header=TRUE, sep=";", dec=",")
@@ -292,13 +291,9 @@ ano[,3:4]<-round(ano[,3:4],3)
 datatable(ano, rownames=c("Intercept", "Age", "Group"))
 ```
 
-<!--html_preserve--><div id="htmlwidget-c0af697aad3aa5b1fa17" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c0af697aad3aa5b1fa17">{"x":{"filter":"none","data":[["Intercept","Age","Group"],[1,5,2],[226,226,44],[3436.904,2313.417,0.87],[0,0,0.426]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>numDF<\/th>\n      <th>denDF<\/th>\n      <th>F.value<\/th>\n      <th>p.value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 ### Total pellets ingestion
 
 Does total pellets consumption differ between the three experimental groups ? 
-
 
 ```r
 #data wide
@@ -326,11 +321,7 @@ summary[,2]<-round(summary[,2],3)
 datatable(summary)
 ```
 
-<!--html_preserve--><div id="htmlwidget-905841d9317ec7e309e2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-905841d9317ec7e309e2">{"x":{"filter":"none","data":[["1","2","3","4"],["RFFP","STAN","STAP","ALL"],[[346.393,80.161],[363.417,42.331],[346.004,60.479],[352.188,61.67]],[15,16,15,46],[0,0,1,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>GROUP<\/th>\n      <th>S<\/th>\n      <th>N<\/th>\n      <th>Missing<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 ## Graphical synthesis of the feeding pattern
-
 
 ```r
 dailymilk<-summarySE(milk, measurevar="MILK_CONSUMED_RABBIT", groupvars=c("AGE", "GROUP"), na.rm=TRUE)
@@ -352,7 +343,7 @@ ggplot(intake, aes(AGE, CONSO, group = interaction(GROUP, type),
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) #permet d'enlever légende pour couleur 
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](fig/food%20pattern.png)<!-- -->
 
 ```r
 #focus gel consumption
@@ -368,7 +359,7 @@ conso_GROUP<-conso_GROUP + theme_classic()+theme(legend.position="right",axis.li
 conso_GROUP
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-3-2.png)<!-- -->
+![](fig/kinetics gel consumption.png)<!-- -->
 
 # Microbiota analysis
 
@@ -439,7 +430,7 @@ clust_plot <- hclust(vegdist(Y, method = "bray"), method = "ward.D2")
 ggdendrogram(clust_plot, rotate = TRUE, size = 1)
 ```
 
-![](ISME_script_files/figure-html/hclust-1.png)<!-- -->
+![](fig/hclust-1.png)<!-- -->
 
 ## Alpha-diversity {.tabset}
 
@@ -459,9 +450,6 @@ diversity_cc<-diversity_cc[,1:10]
 datatable(diversity_cc)
 ```
 
-<!--html_preserve--><div id="htmlwidget-e2ad7b18a163b6112ddc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e2ad7b18a163b6112ddc">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],["18_STAN","25_STAN","30_STAN","38_STAN","58_STAN","18_STAP","25_STAP","30_STAP","38_STAP","58_STAP","18_RFFP","25_RFFP","30_RFFP","38_RFFP","58_RFFP"],[246,350.5,410.8,502.5,585.1,251.78,351.5,457.7,526.3,602.4,239.4,335.5,371.7,460,544.9],[3.56,4.11,4.28,4.89,5.17,3.69,4.26,4.7,5.01,5.29,3.58,4.11,4.24,4.63,5.07],[15.46,25.33,29.41,54.97,76.68,18.88,32.31,45.85,67.7,92.05,17.86,25.36,30.89,43.38,75],[69.59,80.76,88.11,27.37,48.7,40.02,38.16,63,37.97,33.73,25.44,77.94,56.19,78.18,64.26],[0.31,0.41,0.48,0.19,0.19,0.17,0.24,0.22,0.2,0.15,0.28,0.34,0.41,0.35,0.24],[4.49,12.65,15.18,15.95,24.09,3.77,10.89,13.74,25.21,19.44,6.97,8,14.84,20.69,21.68],[22.01,25.54,27.86,8.66,15.4,13.34,12.07,19.92,12.01,10.67,8.05,24.65,17.77,24.72,20.32],[0.1,0.13,0.15,0.06,0.06,0.06,0.07,0.07,0.06,0.05,0.09,0.11,0.13,0.11,0.07],[1.42,4,4.8,5.05,7.62,1.26,3.44,4.34,7.97,6.15,2.2,2.53,4.69,6.54,6.86]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>AGE_GROUP<\/th>\n      <th>Observed_mean<\/th>\n      <th>Shannon_mean<\/th>\n      <th>InvSimpson_mean<\/th>\n      <th>Observed_sd<\/th>\n      <th>Shannon_sd<\/th>\n      <th>InvSimpson_sd<\/th>\n      <th>Observed_se<\/th>\n      <th>Shannon_se<\/th>\n      <th>InvSimpson_se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 #### Richness (number of OTUs)
 
 __Graph__
@@ -480,7 +468,7 @@ df_cc$group<-factor(df_cc$group, levels=c("STAN", "STAP", "RFFP"))
 ggplot(df_cc, aes(x=age, y=OTU, fill=group)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(ymin=OTU-OTU_se, ymax=OTU+OTU_se), width=.4, position=position_dodge(.9))+ theme_classic() + theme(legend.position="right",axis.line=element_line(size = 1, color = "black"), axis.ticks.length = unit(.2, "cm"), axis.text = element_text( size = 12, color = "black"),                         axis.title = element_text(face="bold", size = 15, color = "black"), legend.text = element_text( size = 12),                           legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) +  scale_fill_manual(values=col , breaks=c("STAN", "STAP", "RFFP"), labels=c("STA-", "STA+", "RFF+"), name="Groups") + ylab("Number of OTUs") + xlab ("Age") + ylim(0, 650)
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](fig/nb%20OTU%20caecum.png)<!-- -->
 
 __Statistics (comparison STA-/STA+)__
 
@@ -496,9 +484,6 @@ lme_Observed<-update(lme_Observed, weights=varIdent(form=~1|AGE), method="ML") #
 datatable(anova(lme_Observed), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-d71f9a4f4c642b32521e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d71f9a4f4c642b32521e">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[1,1,4,4],[71,18,71,71],[9887.88108287729,5.32808106839543,141.169765884643,0.358079327136113],[0,0.033070064804446,0,0.837588436536087]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 __Statistics (comparison STA+/RFF+)__
 
 
@@ -512,9 +497,6 @@ lme_Observed<-update(lme_Observed, weights=varIdent(form=~1|AGE), method="ML") #
 #plot(lme_Observed, resid(., type = "p") ~ fitted(.), abline = 0) #visual control of the redisuals : ok
 datatable(anova(lme_Observed), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-03677284b13ddab3cd7e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-03677284b13ddab3cd7e">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[1,1,4,4],[71,18,71,71],[5739.86584074352,19.7456093024305,168.855102906921,2.12521809872747],[0,0.00031372123177742,0,0.0865652043562504]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 a<-emmeans(lme_Observed, pairwise ~ GROUP | AGE, adjust="bonferroni")
@@ -562,7 +544,7 @@ df_cc$group<-factor(df_cc$group, levels=c("STAN", "STAP", "RFFP"))
 ggplot(df_cc, aes(x=age, y=InvSimpson, fill=group)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(ymin=InvSimpson-InvSimpson_se, ymax=InvSimpson+InvSimpson_se), width=.4, position=position_dodge(.9))+ theme_classic() + theme(legend.position="right",axis.line=element_line(size = 1, color = "black"), axis.ticks.length = unit(.2, "cm"), axis.text = element_text( size = 12, color = "black"),                         axis.title = element_text(face="bold", size = 15, color = "black"), legend.text = element_text( size = 12),                           legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) +  scale_fill_manual(values=col, breaks=c("STAN", "STAP", "RFFP"), labels=c("STA-", "STA+", "RFF+"), name="Groups") + ylab("Number of InvSimpsons") + xlab ("Age")
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](fig/Invimpson%20caecum.png)<!-- -->
 
 __Statistics (comparison STA-/STA+)__
 
@@ -624,9 +606,6 @@ lme_InvSimpson<-update(lme_InvSimpson, weights=varIdent(form=~1|AGE), method="ML
 datatable(anova(lme_InvSimpson), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-d4cbf705738b1cc44889" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d4cbf705738b1cc44889">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[1,1,4,4],[71,18,71,71],[482.568412692167,4.95484650164116,64.6307096684466,2.91047096896486],[0,0.0390326974842303,0,0.0273705207119418]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-emmeans(lme_InvSimpson, pairwise ~ GROUP | AGE, adjust="bonferroni")
 a$contrasts
@@ -671,9 +650,6 @@ diversity_vermiform<-diversity_vermiform[,1:10]
 datatable(diversity_vermiform)
 ```
 
-<!--html_preserve--><div id="htmlwidget-d7f286e03173eef27ff5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d7f286e03173eef27ff5">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"],["18_STAN","25_STAN","30_STAN","38_STAN","58_STAN","18_STAP","25_STAP","30_STAP","38_STAP","58_STAP","18_RFFP","25_RFFP","30_RFFP","38_RFFP","58_RFFP"],[219.4,408.5,492.9,551.8,607,261.56,425.2,531.7,561.1,620,247.56,404.3,495.4,519.5,593.9],[3.42,4.36,4.57,4.96,4.98,3.74,4.47,4.95,5.06,5.09,3.6,4.38,4.74,4.76,4.95],[14.51,31.69,39.55,57.75,51.74,19.48,37.18,62.3,68.25,65.07,18.02,33.99,50.4,50.03,58.88],[50.86,43.17,74.69,32.13,50.26,51.53,68.55,61.28,31.37,28.9,31.46,53.54,83.92,69.43,82.65],[0.4,0.36,0.44,0.18,0.27,0.2,0.33,0.21,0.21,0.25,0.4,0.26,0.34,0.31,0.39],[5.56,13.1,21.86,16.22,22.87,5.12,13.39,12.87,22.51,21.58,9.05,10.8,22.41,20.4,27.05],[16.08,13.65,23.62,10.16,15.89,17.18,21.68,19.38,9.92,10.22,10.49,16.93,26.54,21.96,26.14],[0.13,0.11,0.14,0.06,0.09,0.07,0.11,0.07,0.07,0.09,0.13,0.08,0.11,0.1,0.12],[1.76,4.14,6.91,5.13,7.23,1.71,4.23,4.07,7.12,7.63,3.02,3.42,7.09,6.45,8.55]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>AGE_GROUP<\/th>\n      <th>Observed_mean<\/th>\n      <th>Shannon_mean<\/th>\n      <th>InvSimpson_mean<\/th>\n      <th>Observed_sd<\/th>\n      <th>Shannon_sd<\/th>\n      <th>InvSimpson_sd<\/th>\n      <th>Observed_se<\/th>\n      <th>Shannon_se<\/th>\n      <th>InvSimpson_se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 #### Richness (number of OTUs)
 
 __Graph__
@@ -693,7 +669,7 @@ df_vermiform$group<-factor(df_vermiform$group, levels=c("STAN", "STAP", "RFFP"))
 ggplot(df_vermiform, aes(x=age, y=OTU, fill=group)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(ymin=OTU-OTU_se, ymax=OTU+OTU_se), width=.4, position=position_dodge(.9))+ theme_classic() + theme(legend.position="right",axis.line=element_line(size = 1, color = "black"), axis.ticks.length = unit(.2, "cm"), axis.text = element_text( size = 12, color = "black"),                         axis.title = element_text(face="bold", size = 15, color = "black"), legend.text = element_text( size = 12),                           legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) +  scale_fill_manual(values=col, breaks=c("STAN", "STAP", "RFFP"), labels=c("STA-", "STA+", "RFF+"), name="Groups") + ylab("Number of OTUs") + xlab ("Age") + ylim(0, 650)
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](fig/nb OTU appendix.png)<!-- -->
 
 __Statistics (comparison STA-/STA+)__
 
@@ -709,9 +685,6 @@ lme_Observed<-update(lme_Observed, weights=varIdent(form=~1|AGE), method="ML") #
 datatable(anova(lme_Observed), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-2c4637a4e76cbdc98cdc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2c4637a4e76cbdc98cdc">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[1,1,4,4],[69,18,69,69],[9576.57320511025,2.80990264113884,195.367495608621,0.521791612094373],[0,0.110965953041415,0,0.719993493153409]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 __Statistics (comparison STA+/RFF+)__
 
 
@@ -725,9 +698,6 @@ lme_Observed<-update(lme_Observed, weights=varIdent(form=~1|AGE), method="ML") #
 #plot(lme_Observed, resid(., type = "p") ~ fitted(.), abline = 0) #visual control of the redisuals : ok
 datatable(anova(lme_Observed), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-cfe8287d97a712d80c54" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cfe8287d97a712d80c54">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[1,1,4,4],[68,18,68,68],[5555.78378903896,3.10763775260844,137.877673746074,0.226906662133605],[0,0.0948959067917143,0,0.922432153429438]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
 
 #### Inv Simpson
 
@@ -746,7 +716,7 @@ df_vermiform$group<-factor(df_vermiform$group, levels=c("STAN", "STAP", "RFFP"))
 ggplot(df_vermiform, aes(x=age, y=InvSimpson, fill=group)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(ymin=InvSimpson-InvSimpson_se, ymax=InvSimpson+InvSimpson_se), width=.4, position=position_dodge(.9))+ theme_classic() + theme(legend.position="right",axis.line=element_line(size = 1, color = "black"), axis.ticks.length = unit(.2, "cm"), axis.text = element_text( size = 12, color = "black"),                         axis.title = element_text(face="bold", size = 15, color = "black"), legend.text = element_text( size = 12),                           legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) +  scale_fill_manual(values=col, breaks=c("STAN", "STAP", "RFFP"), labels=c("STA-", "STA+", "RFF+"), name="Groups") + ylab("InvSimpson index") + xlab ("Age")
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
+![](fig/InvSimpson%20appendix.png)<!-- -->
 
 __Statistics (comparison STA-/STA+)__
 
