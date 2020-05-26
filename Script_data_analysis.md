@@ -359,7 +359,7 @@ conso_GROUP<-conso_GROUP + theme_classic()+theme(legend.position="right",axis.li
 conso_GROUP
 ```
 
-![](fig/kinetics gel consumption.png)<!-- -->
+![](fig/kinetics%20gel%20consumption.png)<!-- -->
 
 # Microbiota analysis
 
@@ -560,9 +560,6 @@ lme_InvSimpson<-update(lme_InvSimpson, weights=varIdent(form=~1|AGE), method="ML
 datatable(anova(lme_InvSimpson), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-a9e02b37913de0ef3ba5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a9e02b37913de0ef3ba5">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[1,1,4,4],[71,18,71,71],[520.677081318622,8.09526403283028,77.7773090280404,1.59335939087158],[0,0.0107416831006167,0,0.185529368823919]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-emmeans(lme_InvSimpson, pairwise ~ GROUP | AGE, adjust="bonferroni")
 a$contrasts
@@ -732,9 +729,6 @@ lme_InvSimpson<-update(lme_InvSimpson, weights=varIdent(form=~1|AGE), method="ML
 datatable(anova(lme_InvSimpson), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-852d954c68ebcce97a32" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-852d954c68ebcce97a32">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[1,1,4,4],[69,18,69,69],[427.573915533928,9.39523364533387,57.7066535435113,1.43542417676314],[0,0.00666809392575995,0,0.231580138877235]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-emmeans(lme_InvSimpson, pairwise ~ GROUP | AGE, adjust="bonferroni")
 a$contrasts
@@ -778,9 +772,6 @@ lme_InvSimpson<-update(lme_InvSimpson, weights=varIdent(form=~1|AGE), method="ML
 datatable(anova(lme_InvSimpson), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-6a9a95f0bea5db135ec3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6a9a95f0bea5db135ec3">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[1,1,4,4],[68,18,68,68],[279.673574944601,0.648500601924151,53.6845285909173,1.33897915934956],[0,0.431159063054641,0,0.264478753333688]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ## Beta-diversity (Wunifrac distances) {.tabset}
 
 ### Caecum
@@ -820,7 +811,7 @@ axis.title.y = element_text(colour="black",size=14,angle=90,hjust=.5,vjust=.5,fa
 bp
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](fig/betadisper%20caecum.png)<!-- -->
 
 __Adonis comparison STA-/STA+__
 
@@ -831,11 +822,7 @@ ado_resu_wunif_STAcc<-adonis(dist_wunif_STAcc ~ sample_data(frogs.data_raref_cc_
 datatable(ado_resu_wunif_STAcc$aov.tab, rownames=c("Group", "Age", "Age x Group", "Résidus", "Total")) %>% formatRound(columns=c('Df', 'SumsOfSqs', 'MeanSqs', 'F.Model', 'R2', 'Pr(>F)'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-365616f680c81524caa3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-365616f680c81524caa3">{"x":{"filter":"none","data":[["Group","Age","Age x Group","Résidus","Total"],[1,4,4,89,98],[0.110004271748207,4.06574977203549,0.070231301458815,1.89493564923356,6.14092099447608],[0.110004271748207,1.01643744300887,0.0175578253647037,0.0212914117891412,null],[5.16660298704619,47.7393163532381,0.824643548233772,null,null],[0.0179133181891053,0.662074919330951,0.0114366072323663,0.308575155247578,1],[0.007,0.001,0.545,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Df<\/th>\n      <th>SumsOfSqs<\/th>\n      <th>MeanSqs<\/th>\n      <th>F.Model<\/th>\n      <th>R2<\/th>\n      <th>Pr(&gt;F)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 __Adonis comparison STA+/RFF+__
-
 
 ```r
 dist_wunif_EARLYcc<- phyloseq::distance(frogs.data_raref_cc_EARLY, "wunifrac")
@@ -843,9 +830,6 @@ ado_resu_wunif_EARLYcc<-adonis(dist_wunif_EARLYcc ~ sample_data(frogs.data_raref
 
 datatable(ado_resu_wunif_EARLYcc$aov.tab, rownames=c("Group", "Age", "Age x Group", "Résidus", "Total")) %>% formatRound(columns=c('Df', 'SumsOfSqs', 'MeanSqs', 'F.Model', 'R2', 'Pr(>F)'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-6d07d80b9022a6156024" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6d07d80b9022a6156024">{"x":{"filter":"none","data":[["Group","Age","Age x Group","Résidus","Total"],[1,4,4,89,98],[0.13648200925926,3.84361438294391,0.0753171996995565,1.7845317808477,5.83994537275043],[0.13648200925926,0.960903595735978,0.0188292999248891,0.0200509188859293,null],[6.8067708036581,47.9231700653027,0.939074165728265,null,null],[0.0233704256714616,0.658159304174054,0.0128969014078439,0.30557336874664,1],[0.003,0.001,0.468,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Df<\/th>\n      <th>SumsOfSqs<\/th>\n      <th>MeanSqs<\/th>\n      <th>F.Model<\/th>\n      <th>R2<\/th>\n      <th>Pr(&gt;F)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
 
 ### Appendix
 
@@ -884,7 +868,7 @@ axis.title.y = element_text(colour="black",size=14,angle=90,hjust=.5,vjust=.5,fa
 bp
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
+![](fig/betadisper%20appendix.png)<!-- -->
 
 __Adonis comparison STA-/STA+__
 
@@ -895,9 +879,6 @@ ado_resu_wunif_STAvermiform<-adonis(dist_wunif_STAvermiform ~ sample_data(frogs.
 datatable(ado_resu_wunif_STAvermiform$aov.tab, rownames=c("Group", "Age", "Age x Group", "Résidus", "Total")) %>% formatRound(columns=c('Df', 'SumsOfSqs', 'MeanSqs', 'F.Model', 'R2', 'Pr(>F)'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-c8c8725afa4f301c489b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c8c8725afa4f301c489b">{"x":{"filter":"none","data":[["Group","Age","Age x Group","Résidus","Total"],[1,4,4,87,96],[0.12558159133331,3.31485685240051,0.112467098579887,1.92609287324534,5.47899841555905],[0.12558159133331,0.828714213100128,0.0281167746449716,0.0221389985430499,null],[5.672415176735,37.4323261049352,1.27001113398593,null,null],[0.0229205379904269,0.605011463954271,0.0205269448993646,0.351541053155937,1],[0.009,0.001,0.266,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Df<\/th>\n      <th>SumsOfSqs<\/th>\n      <th>MeanSqs<\/th>\n      <th>F.Model<\/th>\n      <th>R2<\/th>\n      <th>Pr(&gt;F)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 __Adonis comparison STA+/RFF+__
 
 
@@ -907,9 +888,6 @@ ado_resu_wunif_EARLYvermiform<-adonis(dist_wunif_EARLYvermiform ~ sample_data(fr
 
 datatable(ado_resu_wunif_EARLYvermiform$aov.tab, rownames=c("Group", "Age", "Age x Group", "Résidus", "Total")) %>% formatRound(columns=c('Df', 'SumsOfSqs', 'MeanSqs', 'F.Model', 'R2', 'Pr(>F)'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-fb5650de001c217d7a3c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fb5650de001c217d7a3c">{"x":{"filter":"none","data":[["Group","Age","Age x Group","Résidus","Total"],[1,4,4,86,95],[0.0554776925079538,2.66760380169754,0.11834306894834,1.6920822804907,4.53350684364453],[0.0554776925079538,0.666900950424384,0.0295857672370849,0.019675375354543,null],[2.8196510362962,33.8952085237041,1.50369518771359,null,null],[0.0122372579156304,0.588419493716486,0.0261040896219763,0.373239158745908,1],[0.046,0.001,0.14,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Df<\/th>\n      <th>SumsOfSqs<\/th>\n      <th>MeanSqs<\/th>\n      <th>F.Model<\/th>\n      <th>R2<\/th>\n      <th>Pr(&gt;F)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
 
 ### Comparison microbiota caecum/appendix
 
@@ -934,7 +912,7 @@ p.o$layers <- p.o$layers[-1]
 p.o
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
+![](fig/nMDS caecum appendix.png)<!-- -->
 
 __ADONIS to compare the difference of microbiome structure between caecum and appendix over time__
 
@@ -945,9 +923,6 @@ ado_resu_wunif<-adonis(dist_wunif ~ sample_data(frogs.data_raref)$ORGAN*sample_d
 
 datatable(ado_resu_wunif$aov.tab, rownames=c("Organe", "Age", "Age x Organ", "Résidus", "Total")) %>% formatRound(columns=c('Df', 'SumsOfSqs', 'MeanSqs', 'F.Model', 'R2', 'Pr(>F)'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-2f5ee43ec90bc5d71bab" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2f5ee43ec90bc5d71bab">{"x":{"filter":"none","data":[["Organe","Age","Age x Organ","Résidus","Total"],[1,4,4,285,294],[0.202160149286949,10.1701938526632,0.347576541866156,6.24344283050584,16.9633733743221],[0.202160149286949,2.54254846316579,0.0868941354665389,0.0219068169491433,null],[9.22818453069945,116.061976008122,3.9665340550507,null,null],[0.011917449720995,0.599538407145954,0.0204898244114753,0.368054318721576,1],[0.002,0.001,0.001,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Df<\/th>\n      <th>SumsOfSqs<\/th>\n      <th>MeanSqs<\/th>\n      <th>F.Model<\/th>\n      <th>R2<\/th>\n      <th>Pr(&gt;F)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 #pairwise adonis
@@ -1115,7 +1090,7 @@ scale_fill_gradient2(low = "darkblue", high = "red", mid="grey",
 coord_fixed()
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-25-2.png)<!-- -->
+![](fig/R2%20comparison%20caecum%20appendix.png)<!-- -->
 
 __Analysis within_sample__
 
@@ -1172,7 +1147,7 @@ ggplot(dist, aes(x=AGE, y=mean, group=1)) + geom_smooth(method="auto", se=FALSE)
         legend.title = element_text(size = 15), legend.key.height = unit(.7, "cm"), legend.position="right") 
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
+![](fig/Differentiation%20microbiota%20caecum%20appendix.png)<!-- -->
 
 ```r
 #Statistics AGE effect
@@ -1279,7 +1254,7 @@ labs(x = "Age interval (days)", y = "Wunifrac distance") + theme_classic()+theme
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) + ylim(0.2,0.7)
 ```
 
-![](ISME_script_files/figure-html/distance to 58 caecum-1.png)<!-- -->
+![](fig/distance%20to%2058%20caecum-1.png)<!-- -->
 
 __Comparison STA-/STA+__
 
@@ -1439,7 +1414,7 @@ labs(x = "Age interval (days)", y = "Wunifrac distance") + theme_classic()+theme
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) + ylim(0.2,0.7)
 ```
 
-![](ISME_script_files/figure-html/distance to 58 appendix-1.png)<!-- -->
+![](fig/distance%20to%2058%20appendix-1.png)<!-- -->
 
 __Comparison STA-/STA+__
 
@@ -1470,18 +1445,10 @@ c
 a<-emmeans(mod, pairwise ~ GROUP | Label, adjust="BH")
 ```
 
-```
-## Warning in ref_grid(object, ...): There are unevaluated constants in the response formula
-## Auto-detection of the response transformation may be incorrect
-```
-
 ```r
 datatable(as.data.frame(a$contrasts)) %>%
     formatRound(columns=c('contrast', 'Label', 'estimate', 'SE', 'df', 't.ratio', 'p.value'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-7077e190bdd598acbe85" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7077e190bdd598acbe85">{"x":{"filter":"none","data":[["1","2","3","4"],["STAN - STAP","STAN - STAP","STAN - STAP","STAN - STAP"],["Between 18 and 58","Between 25 and 58","Between 30 and 58","Between 38 and 58"],[0.136384250988092,0.0371808730160725,0.142771269930225,0.0148848447487815],[0.0418092494332941,0.0405756658075175,0.0405756658075173,0.0405756658075174],[704,704,704,704],[3.26205930115274,0.916334267746853,3.51864269110217,0.366841663656049],[0.00115941742940774,0.359805379374757,0.000461647567638379,0.71384736046433]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>contrast<\/th>\n      <th>Label<\/th>\n      <th>estimate<\/th>\n      <th>SE<\/th>\n      <th>df<\/th>\n      <th>t.ratio<\/th>\n      <th>p.value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6,7],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[3,4,5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
 
 __Comparison STA+/RFF+__
 
@@ -1512,23 +1479,10 @@ c
 a<-emmeans(mod, pairwise ~ GROUP| Label, adjust="BH")
 ```
 
-```
-## Warning in ref_grid(object, ...): There are unevaluated constants in the response formula
-## Auto-detection of the response transformation may be incorrect
-```
-
-```
-## Note: Use 'contrast(regrid(object), ...)' to obtain contrasts of back-transformed estimates
-```
-
 ```r
 datatable(as.data.frame(a$contrasts)) %>%
     formatRound(columns=c('contrast', 'Label', 'estimate', 'SE', 'df', 't.ratio', 'p.value'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-57844864554885e55062" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-57844864554885e55062">{"x":{"filter":"none","data":[["1","2","3","4"],["RFFP - STAP","RFFP - STAP","RFFP - STAP","RFFP - STAP"],["Between 18 and 58","Between 25 and 58","Between 30 and 58","Between 38 and 58"],[-0.0266651254944575,-0.018538483771507,-0.100751759742413,-0.160952207608966],[0.0368833488899226,0.0349906170680395,0.0349906170680394,0.0349906170680395],[694,694,694,694],[-0.722958361889505,-0.529812999166569,-2.87939362562543,-4.5998676529766],[0.469949034620212,0.596411040108538,0.00410710501909446,5.02516243317006e-06]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>contrast<\/th>\n      <th>Label<\/th>\n      <th>estimate<\/th>\n      <th>SE<\/th>\n      <th>df<\/th>\n      <th>t.ratio<\/th>\n      <th>p.value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6,7],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[3,4,5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 
 ## Taxonomy {.tabset}
 
@@ -1615,10 +1569,6 @@ temp[,4:5]<-round(temp[,4:5],4)
 datatable(temp)
 ```
 
-<!--html_preserve--><div id="htmlwidget-875f2773a178bf834d39" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-875f2773a178bf834d39">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90"],["Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes"],["STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP"],["18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58"],[0.0065,0.0039,0.0036,0.0111,0.0092,0.005,0.0029,0.0038,0.012,0.0085,0.0041,0.0024,0.0026,0.0091,0.0097,0.5622,0.3569,0.3697,0.2012,0.0768,0.4792,0.3225,0.2718,0.1583,0.0819,0.5524,0.3749,0.3276,0.2209,0.0885,0.0082,0.0015,0.0048,0.0051,0.0011,0.0098,0.0017,0.0059,0.0056,0.001,0.0094,0.0016,0.0015,0.0042,0.0007,0.3593,0.6013,0.61,0.7713,0.891,0.4236,0.6608,0.7067,0.8106,0.8948,0.3649,0.6008,0.6494,0.7471,0.8932,0.0617,0.0093,0.0093,0.011,0.0077,0.0817,0.0115,0.0105,0.0116,0.0113,0.0638,0.0089,0.0083,0.0114,0.0063,0.0022,0.027,0.0027,0.0004,0.0143,0.0007,0.0006,0.0015,0.0019,0.0025,0.0053,0.0114,0.0105,0.0073,0.0016],[0.0044,0.002,0.0025,0.0052,0.0033,0.0042,0.0012,0.0018,0.0067,0.0032,0.0026,0.001,0.0007,0.0044,0.0032,0.1046,0.0987,0.1223,0.0572,0.0306,0.1473,0.0852,0.0614,0.0734,0.0278,0.0625,0.1125,0.0965,0.0725,0.0373,0.0069,0.0015,0.0026,0.0023,0.0011,0.011,0.0018,0.0043,0.0041,0.0011,0.0089,0.0021,0.0011,0.0042,0.0007,0.1012,0.0984,0.1181,0.0576,0.0507,0.1505,0.0884,0.0597,0.0735,0.0306,0.0519,0.1055,0.0966,0.0769,0.0376,0.0205,0.0042,0.0032,0.0039,0.0035,0.0371,0.004,0.0047,0.0043,0.0132,0.0329,0.0025,0.0029,0.0033,0.0025,0.0029,0.055,0.005,0.0006,0.0414,0.0018,0.0008,0.0019,0.0021,0.0032,0.0079,0.0155,0.0155,0.0143,0.0023]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Phylum<\/th>\n      <th>GROUP<\/th>\n      <th>AGE<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-
 ```r
 #selection of variables for plot
 m_df_ra_p<-dfrap%>%dplyr::select(.,Phylum,Abundance,AGE_GROUP, AGE)%>%
@@ -1640,7 +1590,7 @@ labs(x = "Group") + labs(y= "Proportion") +  theme(legend.position="right", axis
 pphyl
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-34-1.png)<!-- -->
+![](fig/phyla%20caecum.png)<!-- -->
 
 __Statistics phyla comparison STA-/STA+__
 
@@ -1675,9 +1625,6 @@ rownames(result)=colnames(dfSTA[1:7])
 STAT_PHYLUM=result
 datatable(STAT_PHYLUM)
 ```
-
-<!--html_preserve--><div id="htmlwidget-1b57df74b8a2b364dfdf" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1b57df74b8a2b364dfdf">{"x":{"filter":"none","data":[["Bacteroidetes","Firmicutes","Tenericutes","Actinobacteria","Epsilonbacteraeota","Proteobacteria","Firm_bact_ratio"],[0,0,0.093,0,0,0,0],[0.068,0.068,0.175,0.395,0.865,0.106,0.068],[0.803,0.803,0.395,0.941,0.994,0.941,0.803]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 <font style="color:blue"> Investigation Bacteroidetes (STA-/STA+) </font>
 
@@ -1817,12 +1764,7 @@ rownames(result)=colnames(dfEARLY[1:7])
 STAT_PHYLUM=result
 datatable(STAT_PHYLUM)
 ```
-
-<!--html_preserve--><div id="htmlwidget-69308d25d01984060b22" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-69308d25d01984060b22">{"x":{"filter":"none","data":[["Bacteroidetes","Firmicutes","Tenericutes","Actinobacteria","Epsilonbacteraeota","Proteobacteria","Firm_bact_ratio"],[0,0,0.808,0,0,0,0],[0.021,0.021,0.021,0.147,0.146,0.033,0.021],[0.732,0.732,0.726,0.732,0.726,0.732,0.732]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 <font style="color:blue"> Investigation Bacteroidetes (STA+/RFF+) </font>
-
 
 ```r
 newvar<-((dfEARLY)[,1])^0.25
@@ -2020,9 +1962,6 @@ temp[,4:6]<-round(temp[,4:6],4)
 datatable(temp)
 ```
 
-<!--html_preserve--><div id="htmlwidget-c67e989604214136e000" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c67e989604214136e000">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150"],["18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58"],["18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP"],["Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Desulfovibrionales Desulfovibrionaceae"],[0.3699,0.0439,0.0085,0.1036,0.014,0.0052,0.002,0.1782,0.14,0.0475,0.2944,0.0532,0.0183,0.0755,0.0101,0.0064,0.0013,0.1941,0.1905,0.062,0.3744,0.0617,0.0112,0.0714,0.0112,0.0049,0.0011,0.1934,0.1361,0.0429,0.2365,0.038,0.028,0.0358,0.0485,0.0199,0.0011,0.2287,0.2945,0.0077,0.1557,0.0561,0.0253,0.0707,0.0538,0.0204,0.0007,0.2394,0.3372,0.0096,0.2267,0.0503,0.0134,0.0648,0.0355,0.0217,0.001,0.2598,0.2759,0.007,0.1737,0.074,0.0325,0.0792,0.0382,0.0346,0.0042,0.2152,0.3118,0.0057,0.08,0.0615,0.034,0.0872,0.0541,0.0483,0.0071,0.2266,0.3628,0.0052,0.1513,0.0614,0.0234,0.0828,0.0583,0.0285,0.0012,0.258,0.2982,0.0042,0.0566,0.0464,0.0352,0.0582,0.0494,0.0372,0.054,0.2162,0.4058,0.0063,0.0307,0.0278,0.05,0.0405,0.0525,0.0383,0.0649,0.2232,0.4211,0.0067,0.0794,0.0508,0.0342,0.0477,0.0487,0.0345,0.0243,0.2452,0.3881,0.0057,0.0213,0.0084,0.0206,0.0241,0.0417,0.035,0.2192,0.1916,0.3773,0.0038,0.02,0.01,0.0215,0.0276,0.0395,0.0321,0.2077,0.1934,0.396,0.0037,0.0172,0.0078,0.0209,0.0409,0.0546,0.0182,0.1628,0.2407,0.4032,0.0029],[0.0748,0.0311,0.0124,0.046,0.0146,0.0069,0.0025,0.0417,0.0483,0.0267,0.1278,0.0446,0.0252,0.052,0.005,0.0105,0.0014,0.0482,0.11,0.021,0.0801,0.0298,0.017,0.0289,0.004,0.0046,0.0007,0.0329,0.0291,0.0204,0.0503,0.0345,0.0532,0.0293,0.0254,0.0103,0.0006,0.0416,0.0867,0.004,0.0821,0.0378,0.0268,0.0473,0.0311,0.0148,0.0005,0.0479,0.0608,0.0047,0.0938,0.0299,0.0083,0.0312,0.0157,0.0156,0.0008,0.0532,0.0679,0.0024,0.1082,0.0343,0.0465,0.0355,0.0222,0.017,0.0066,0.0531,0.0792,0.0015,0.0316,0.0335,0.0357,0.0466,0.0142,0.0182,0.0104,0.0467,0.0591,0.0029,0.0888,0.0265,0.0229,0.0277,0.0345,0.0157,0.0011,0.0692,0.057,0.002,0.0551,0.0456,0.0265,0.0271,0.0169,0.0155,0.054,0.0435,0.043,0.0034,0.0327,0.0364,0.0416,0.0319,0.0178,0.0164,0.072,0.0478,0.0635,0.0029,0.0515,0.0646,0.0355,0.025,0.0218,0.0175,0.0269,0.0528,0.0992,0.0022,0.0207,0.0093,0.0202,0.0102,0.0123,0.0183,0.0435,0.0324,0.0393,0.0019,0.0212,0.0066,0.0156,0.0177,0.0085,0.0141,0.0378,0.0243,0.0604,0.0023,0.018,0.0062,0.0186,0.042,0.0251,0.0076,0.0368,0.0475,0.0483,0.001],[0.0236,0.0098,0.0039,0.0145,0.0046,0.0022,0.0008,0.0132,0.0153,0.0084,0.0426,0.0149,0.0084,0.0173,0.0017,0.0035,0.0005,0.0161,0.0367,0.007,0.0253,0.0094,0.0054,0.0091,0.0013,0.0015,0.0002,0.0104,0.0092,0.0065,0.0159,0.0109,0.0168,0.0093,0.008,0.0033,0.0002,0.0132,0.0274,0.0013,0.026,0.012,0.0085,0.015,0.0098,0.0047,0.0002,0.0151,0.0192,0.0015,0.0297,0.0094,0.0026,0.0099,0.005,0.0049,0.0003,0.0168,0.0215,0.0008,0.0342,0.0108,0.0147,0.0112,0.007,0.0054,0.0021,0.0168,0.025,0.0005,0.01,0.0106,0.0113,0.0147,0.0045,0.0058,0.0033,0.0148,0.0187,0.0009,0.0281,0.0084,0.0073,0.0088,0.0109,0.005,0.0003,0.0219,0.018,0.0006,0.0174,0.0144,0.0084,0.0086,0.0053,0.0049,0.0171,0.0137,0.0136,0.0011,0.0103,0.0115,0.0132,0.0101,0.0056,0.0052,0.0228,0.0151,0.0201,0.0009,0.0163,0.0204,0.0112,0.0079,0.0069,0.0055,0.0085,0.0167,0.0314,0.0007,0.0065,0.0029,0.0064,0.0032,0.0039,0.0058,0.0138,0.0102,0.0124,0.0006,0.0067,0.0021,0.0049,0.0056,0.0027,0.0045,0.0119,0.0077,0.0191,0.0007,0.0057,0.002,0.0059,0.0133,0.0079,0.0024,0.0116,0.015,0.0153,0.0003]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>AGE<\/th>\n      <th>AGE_GROUP<\/th>\n      <th>Family<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 __Statistics families comparison STA-/STA+__
 
 
@@ -2055,9 +1994,6 @@ rownames(result)=colnames(dfSTA[1:10])
 STAT_FAMILY=result
 datatable(STAT_FAMILY)
 ```
-
-<!--html_preserve--><div id="htmlwidget-0153774cea759a6b4747" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0153774cea759a6b4747">{"x":{"filter":"none","data":[["Clostridiales Ruminococcaceae","Clostridiales Lachnospiraceae","Bacteroidales Bacteroidaceae","Bacteroidales Rikenellaceae","Clostridiales Eubacteriaceae","Bacteroidales Barnesiellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Bacteroidales Muribaculaceae","Desulfovibrionales Desulfovibrionaceae"],[0,0.001,0,0,0,0,0,0,0,0],[0.047,0.668,0.047,0.934,0.934,0.961,0.753,0.934,0.619,0.934],[0.878,0.99,0.818,0.09,0.878,0.334,0.609,0.878,0.936,0.609]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGE_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 <font style="color:blue"> Investigation Ruminococcaceae (STA-/STA+) </font>
 
@@ -2196,9 +2132,6 @@ STAT_FAMILY=result
 datatable(STAT_FAMILY)
 ```
 
-<!--html_preserve--><div id="htmlwidget-30ae1c22cd6c08bddb89" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-30ae1c22cd6c08bddb89">{"x":{"filter":"none","data":[["Clostridiales Ruminococcaceae","Clostridiales Lachnospiraceae","Bacteroidales Bacteroidaceae","Bacteroidales Rikenellaceae","Clostridiales Eubacteriaceae","Bacteroidales Barnesiellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Bacteroidales Muribaculaceae","Desulfovibrionales Desulfovibrionaceae"],[0,0.002,0,0,0,0,0,0,0,0],[0.011,0.064,0.011,0.54,0.011,0.347,0.853,0.197,0.197,0.347],[0.522,0.866,0.206,0.946,0.023,0.459,0.322,0.459,0.888,0.603]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGE_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 <font style="color:blue"> Investigation Ruminococcaceae (STA+/RFF+) </font>
 
 ```r
@@ -2321,7 +2254,7 @@ theme(axis.text=element_text(size=15), axis.title=element_text(size=16)) + theme
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm"))
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-50-1.png)<!-- -->
+![](fig/Rumino%20caecum.png)<!-- -->
 
 
 ```r
@@ -2339,7 +2272,7 @@ theme(axis.text=element_text(size=15), axis.title=element_text(size=16)) + theme
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm"))
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-51-1.png)<!-- -->
+![](fig/Bacteroi%20caecum.png)<!-- -->
 
 ### Appendix
 
@@ -2378,9 +2311,6 @@ temp[,4:5]<-round(temp[,4:5],4)
 datatable(temp)
 ```
 
-<!--html_preserve--><div id="htmlwidget-fe44cf54f94b39c36bed" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fe44cf54f94b39c36bed">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90"],["Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Actinobacteria","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Epsilonbacteraeota","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Proteobacteria","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes","Tenericutes"],["STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","RFFP","RFFP","RFFP","RFFP","RFFP"],["18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58","18","25","30","38","58"],[0.0032,0.0049,0.0032,0.0084,0.0054,0.0025,0.0034,0.0036,0.0079,0.0047,0.003,0.0022,0.0031,0.0052,0.0042,0.5983,0.3174,0.3358,0.2135,0.1667,0.5112,0.3082,0.2249,0.1294,0.1675,0.5104,0.3297,0.2595,0.2156,0.1609,0.0096,0.0025,0.0088,0.0054,0.002,0.0138,0.0027,0.0111,0.0055,0.0073,0.0074,0.002,0.0056,0.0041,0.0195,0.3128,0.6213,0.6295,0.7449,0.7776,0.3995,0.6465,0.7385,0.8449,0.7734,0.4108,0.6386,0.7034,0.7461,0.7651,0.0747,0.0416,0.0195,0.0258,0.0365,0.073,0.035,0.019,0.0096,0.0434,0.063,0.0168,0.0165,0.0217,0.047,0.0014,0.0123,0.0031,0.0019,0.0118,0.0001,0.0041,0.0029,0.0027,0.0037,0.0054,0.0107,0.012,0.0073,0.0032],[0.0014,0.0025,0.0011,0.005,0.0018,0.0003,0.0022,0.0012,0.0042,0.0028,0.0017,0.001,0.0014,0.0017,0.0016,0.0696,0.083,0.1241,0.0515,0.1096,0.0933,0.0832,0.0305,0.05,0.0968,0.13,0.0683,0.0566,0.0432,0.0487,0.014,0.0023,0.0048,0.0026,0.002,0.0149,0.0025,0.0116,0.0032,0.015,0.0058,0.0018,0.0051,0.0027,0.0424,0.0691,0.0802,0.1203,0.0638,0.1361,0.0882,0.0839,0.0367,0.0513,0.1246,0.1161,0.076,0.0622,0.0455,0.0943,0.0192,0.0438,0.0178,0.0236,0.043,0.0304,0.0343,0.0108,0.0043,0.0434,0.033,0.0128,0.006,0.0231,0.0297,0.0019,0.0242,0.0032,0.0035,0.0326,0.0003,0.0104,0.0038,0.0033,0.0027,0.0095,0.0158,0.02,0.0095,0.0026]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Phylum<\/th>\n      <th>GROUP<\/th>\n      <th>AGE<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 
 ```r
 #selection of variables for plot
@@ -2403,7 +2333,7 @@ labs(x = "Group") + labs(y= "Proportion") +  theme(legend.position="right", axis
 pphyl
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-54-1.png)<!-- -->
+![](fig/phyla%20appendix.png)<!-- -->
 
 __Statistics phyla comparison STA-/STA+__
 
@@ -2437,9 +2367,6 @@ rownames(result)=colnames(dfSTA[1:7])
 STAT_PHYLUM=result
 datatable(STAT_PHYLUM)
 ```
-
-<!--html_preserve--><div id="htmlwidget-1474c828d5043a85e200" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1474c828d5043a85e200">{"x":{"filter":"none","data":[["Bacteroidetes","Firmicutes","Tenericutes","Actinobacteria","Epsilonbacteraeota","Proteobacteria","Firm_bact_ratio"],[0,0,0,0,0,0,0],[0.02,0.005,0.383,0.25,0.383,0.484,0.024],[0.22,0.22,0.625,0.693,0.785,0.59,0.22]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 <font style="color:blue"> Investigation Bacteroidetes (STA-/STA+) </font>
 
@@ -2579,9 +2506,6 @@ STAT_PHYLUM=result
 datatable(STAT_PHYLUM)
 ```
 
-<!--html_preserve--><div id="htmlwidget-158c50d4e87d777d5e0a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-158c50d4e87d777d5e0a">{"x":{"filter":"none","data":[["Bacteroidetes","Firmicutes","Tenericutes","Actinobacteria","Epsilonbacteraeota","Proteobacteria","Firm_bact_ratio"],[0,0,0,0,0.001,0,0],[0.073,0.332,0.065,0.091,0.692,0.952,0.065],[0.073,0.405,0.157,0.405,0.157,0.139,0.073]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 #### By Family 
 
 
@@ -2620,9 +2544,6 @@ temp[,4:6]<-round(temp[,4:6],4)
 datatable(temp)
 ```
 
-<!--html_preserve--><div id="htmlwidget-c5ba1ae33a77b42148f8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c5ba1ae33a77b42148f8">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150"],["18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","18","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","25","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","38","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58","58"],["18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAN","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_STAP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","18_RFFP","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAN","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_STAP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","25_RFFP","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAN","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_STAP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","30_RFFP","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAN","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_STAP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","38_RFFP","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAN","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_STAP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP","58_RFFP"],["Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae","Bacteroidales Bacteroidaceae","Bacteroidales Barnesiellaceae","Bacteroidales Muribaculaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Clostridiales Lachnospiraceae","Clostridiales Ruminococcaceae","Enterobacteriales Enterobacteriaceae"],[0.3964,0.0448,0.0046,0.1214,0.0088,0.0121,0.0007,0.1658,0.1097,0.0284,0.3105,0.0506,0.0232,0.0985,0.0107,0.0125,0.0006,0.1815,0.176,0.0188,0.3397,0.0599,0.011,0.0796,0.0148,0.0133,0.0007,0.1821,0.1768,0.0236,0.2228,0.0192,0.0183,0.0361,0.0393,0.0235,0.001,0.2179,0.321,0.0247,0.1723,0.035,0.009,0.0776,0.044,0.0236,0.0014,0.2242,0.3347,0.0187,0.1869,0.0409,0.0101,0.0787,0.0402,0.0308,0.0008,0.2595,0.2894,0.0039,0.1862,0.0488,0.0145,0.0745,0.0449,0.0351,0.0009,0.2068,0.3272,0.0086,0.0796,0.0413,0.0195,0.0725,0.0541,0.058,0.0024,0.2225,0.3867,0.0026,0.1181,0.0378,0.0149,0.0813,0.0547,0.0442,0.0012,0.2428,0.3454,0.0035,0.0724,0.0383,0.0254,0.0697,0.0461,0.0333,0.0318,0.232,0.391,0.0133,0.0263,0.0189,0.035,0.0419,0.0573,0.0306,0.0483,0.2468,0.4497,0.0013,0.0798,0.0323,0.0155,0.0782,0.0593,0.0324,0.0111,0.2242,0.3978,0.0097,0.0738,0.004,0.015,0.0665,0.0411,0.0269,0.1276,0.1976,0.3619,0.0195,0.0773,0.0059,0.0204,0.0571,0.0451,0.0333,0.1237,0.1816,0.3649,0.0329,0.0698,0.0066,0.0119,0.0628,0.0679,0.029,0.0726,0.1926,0.3819,0.0279],[0.0776,0.0395,0.0098,0.0815,0.0054,0.0124,0.0006,0.0315,0.0503,0.0178,0.0701,0.0447,0.0261,0.073,0.0034,0.0146,0.0005,0.0221,0.0714,0.0182,0.1163,0.0384,0.024,0.0259,0.0084,0.0131,0.0007,0.0373,0.0882,0.0378,0.0615,0.0171,0.0347,0.0192,0.0213,0.0154,0.0008,0.0312,0.0639,0.0348,0.08,0.0158,0.0084,0.0413,0.0203,0.019,0.0011,0.0289,0.0613,0.0275,0.0528,0.0283,0.0053,0.0273,0.0157,0.0209,0.0006,0.0544,0.0556,0.0034,0.0908,0.031,0.016,0.0192,0.0134,0.0133,0.0004,0.0482,0.0788,0.0134,0.0229,0.0141,0.0112,0.0185,0.01,0.0287,0.0022,0.0348,0.053,0.0016,0.0528,0.0181,0.01,0.0265,0.0236,0.0262,0.0008,0.0616,0.0561,0.0038,0.0351,0.0466,0.0251,0.0423,0.0172,0.0155,0.0302,0.0496,0.0634,0.0247,0.0123,0.0189,0.0214,0.0303,0.0299,0.0122,0.0544,0.0594,0.067,0.0015,0.0238,0.0336,0.0133,0.0511,0.0373,0.0137,0.0096,0.0589,0.0522,0.0199,0.0583,0.0028,0.0138,0.0686,0.0248,0.0113,0.0707,0.039,0.0922,0.0377,0.0614,0.0031,0.0147,0.0437,0.0227,0.018,0.0616,0.0634,0.066,0.0403,0.0357,0.0039,0.0057,0.0284,0.0506,0.0117,0.0336,0.0542,0.0776,0.0236],[0.0245,0.0125,0.0031,0.0258,0.0017,0.0039,0.0002,0.01,0.0159,0.0056,0.0234,0.0149,0.0087,0.0243,0.0011,0.0049,0.0002,0.0074,0.0238,0.0061,0.0388,0.0128,0.008,0.0086,0.0028,0.0044,0.0002,0.0124,0.0294,0.0126,0.0194,0.0054,0.011,0.0061,0.0067,0.0049,0.0003,0.0099,0.0202,0.011,0.0253,0.005,0.0027,0.0131,0.0064,0.006,0.0004,0.0091,0.0194,0.0087,0.0167,0.0089,0.0017,0.0086,0.005,0.0066,0.0002,0.0172,0.0176,0.0011,0.0287,0.0098,0.0051,0.0061,0.0043,0.0042,0.0001,0.0153,0.0249,0.0042,0.0072,0.0045,0.0035,0.0058,0.0032,0.0091,0.0007,0.011,0.0168,0.0005,0.0167,0.0057,0.0032,0.0084,0.0074,0.0083,0.0003,0.0195,0.0177,0.0012,0.0111,0.0147,0.0079,0.0134,0.0054,0.0049,0.0095,0.0157,0.02,0.0078,0.0039,0.006,0.0068,0.0096,0.0095,0.0039,0.0172,0.0188,0.0212,0.0005,0.0075,0.0106,0.0042,0.0162,0.0118,0.0043,0.003,0.0186,0.0165,0.0063,0.0184,0.0009,0.0044,0.0217,0.0078,0.0036,0.0224,0.0123,0.0292,0.0119,0.0205,0.001,0.0049,0.0146,0.0076,0.006,0.0205,0.0211,0.022,0.0134,0.0113,0.0012,0.0018,0.009,0.016,0.0037,0.0106,0.0171,0.0245,0.0075]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>AGE<\/th>\n      <th>AGE_GROUP<\/th>\n      <th>Family<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n      <th>se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 __Statistics families comparison STA-/STA+__
 
 
@@ -2655,9 +2576,6 @@ rownames(result)=colnames(dfSTA[1:10])
 STAT_FAMILY=result
 datatable(STAT_FAMILY)
 ```
-
-<!--html_preserve--><div id="htmlwidget-7540fb47402e58b0f556" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7540fb47402e58b0f556">{"x":{"filter":"none","data":[["Clostridiales Ruminococcaceae","Clostridiales Lachnospiraceae","Bacteroidales Bacteroidaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Bacteroidales Barnesiellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Bacteroidales Muribaculaceae","Enterobacteriales Enterobacteriaceae"],[0,0,0,0.015,0,0,0,0,0,0],[0.003,0.508,0.001,0.992,0.082,0.508,0.437,0.355,0.082,0.437],[0.183,0.609,0.183,0.183,0.979,0.183,0.609,0.761,0.247,0.386]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGE_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 <font style="color:blue"> Investigation Ruminococcaceae (STA-/STA+) </font>
 
@@ -2798,29 +2716,12 @@ STAT_FAMILY=result
 datatable(STAT_FAMILY)
 ```
 
-<!--html_preserve--><div id="htmlwidget-5e3504e13ebf9ddbbaba" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5e3504e13ebf9ddbbaba">{"x":{"filter":"none","data":[["Clostridiales Ruminococcaceae","Clostridiales Lachnospiraceae","Bacteroidales Bacteroidaceae","Bacteroidales Rikenellaceae","Clostridiales Christensenellaceae","Bacteroidales Barnesiellaceae","Clostridiales Clostridiales vadinBB60 group","Clostridiales Eubacteriaceae","Bacteroidales Muribaculaceae","Enterobacteriales Enterobacteriaceae"],[0,0,0,0.011,0,0,0,0,0,0],[0.182,0.779,0.006,0.182,0.757,0.417,0.779,0,0.118,0.779],[0.702,0.599,0.026,0.599,0.675,0.599,0.627,0.005,0.426,0.627]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGE_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 <font style="color:blue"> Investigation Ruminococcaceae (STA+/RFF+) </font>
 
 ```r
 newvar<-((dfEARLY)[,1])^0.25
 mod_REML<-lmerTest::lmer(newvar ~ GROUP*AGE + (1|LITTER), data = dfEARLY)
-```
-
-```
-## boundary (singular) fit: see ?isSingular
-```
-
-```r
 mod_REMLupdate<-update(mod_REML,REML = FALSE)
-```
-
-```
-## boundary (singular) fit: see ?isSingular
-```
-
-```r
 #plot(residuals(mod_REML))
 Anova(mod_REMLupdate, type="III")
 ```
@@ -2885,7 +2786,7 @@ theme(axis.text=element_text(size=15), axis.title=element_text(size=16)) + theme
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm"))
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-66-1.png)<!-- -->
+![](fig/Rumino%20appendix.png)<!-- -->
 
 
 ```r
@@ -2903,7 +2804,7 @@ theme(axis.text=element_text(size=15), axis.title=element_text(size=16)) + theme
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm"))
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-67-1.png)<!-- -->
+![](fig/Bacteroi%20appendix.png)<!-- -->
 
 ## DeSeq analysis {.tabset}
 
@@ -3136,9 +3037,6 @@ sigtabOTU$Genus = factor(as.character(sigtabOTU$Genus), levels=names(x))
 datatable(sigtabOTU, colnames=c("baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species", "AGE", "names")) %>% formatRound(columns=c("baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj"), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-a0a134da8031a5c9822f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a0a134da8031a5c9822f">{"x":{"filter":"none","data":[["Cluster_33","Cluster_29","Cluster_196","Cluster_95","Cluster_78","Cluster_90","Cluster_238","Cluster_113","Cluster_291"],[220.753457219398,103.183886271611,22.6580612313416,15.2595360012991,18.7971705259549,24.7622849048683,11.5267122897251,16.9537173104909,13.933671429479],[3.2366419675111,-2.97248621647126,-3.33599008946387,-2.33617665997705,2.05965000218351,2.51663702399244,-1.31806527203921,-1.63787431353185,-1.97759173658581],[0.710427373111886,0.659531310344286,0.808808625776592,0.608098685843849,0.577633932769396,0.772418961957346,0.267831346383263,0.40806080108202,0.52465135097535],[4.55590830253856,-4.50696755385211,-4.12457283855098,-3.8417722556581,3.56566656724748,3.25812434435214,-4.92125096572181,-4.01379968178477,-3.76934459981735],[5.21596888280493e-06,6.57606846421546e-06,3.71423438962108e-05,0.000122149148082482,0.000362932565079203,0.00112151252794015,8.59927745088971e-07,5.97490588141504e-05,0.000163676778541791],[0.000777179363537934,0.000986410269632319,0.00278567579221581,0.00610745740412411,0.0136099711904701,0.0336453758382045,0.000128129234018257,0.00445130488165421,0.00812928000090895],["Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria"],["Tenericutes","Bacteroidetes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Bacteroidetes"],["Mollicutes","Bacteroidia","Bacteroidia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia","Bacteroidia"],["Anaeroplasmatales","Bacteroidales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Bacteroidales"],["Anaeroplasmataceae","Rikenellaceae","Muribaculaceae","Ruminococcaceae","Lachnospiraceae","Ruminococcaceae","Christensenellaceae","Ruminococcaceae","Rikenellaceae"],["unknown genus","Rikenellaceae RC9 gut group","unknown genus","Ruminoclostridium","Multi-affiliation","Ruminococcus","unknown genus","Ruminococcus","Rikenellaceae RC9 gut group"],["unknown species","unknown species","unknown species","unknown species","Multi-affiliation","Ruminococcus sp.","unknown species","unknown species","unknown species"],["25","30","30","30","30","30","58","58","58"],["Cluster_33","Cluster_29","Cluster_196","Cluster_95","Cluster_78","Cluster_90","Cluster_238","Cluster_113","Cluster_291"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>baseMean<\/th>\n      <th>log2FoldChange<\/th>\n      <th>lfcSE<\/th>\n      <th>stat<\/th>\n      <th>pvalue<\/th>\n      <th>padj<\/th>\n      <th>Kingdom<\/th>\n      <th>Phylum<\/th>\n      <th>Class<\/th>\n      <th>Order<\/th>\n      <th>Family<\/th>\n      <th>Genus<\/th>\n      <th>Species<\/th>\n      <th>AGE<\/th>\n      <th>names<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 sigtabOTU<-subset(sigtabOTU, log2FoldChange>2|log2FoldChange<(-2))
 sigtabOTU<-sigtabOTU[order(sigtabOTU$log2FoldChange),] 
@@ -3154,7 +3052,7 @@ ggplot(sigtabOTU, aes(y=names,x=-log2FoldChange, color=AGE)) +
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) + ggtitle(" ")+ theme(plot.title = element_text(size=14,face="bold", hjust = 0.5)) 
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-68-2.png)<!-- -->
+![](fig/deseq1.png)<!-- -->
 
 __Comparison STA+/RFF+__
 
@@ -3241,9 +3139,6 @@ sigtabOTU$Genus = factor(as.character(sigtabOTU$Genus), levels=names(x))
 datatable(sigtabOTU, colnames=c("baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species", "AGE", "names")) %>% formatRound(columns=c("baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj"), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-6006f40950186d60c035" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6006f40950186d60c035">{"x":{"filter":"none","data":[["Cluster_69","Cluster_33","Cluster_10","Cluster_39","Cluster_16","Cluster_8","Cluster_28","Cluster_43","Cluster_101","Cluster_207","Cluster_44","Cluster_78","Cluster_112","Cluster_176","Cluster_36","Cluster_32","Cluster_34","Cluster_331","Cluster_45","Cluster_361","Cluster_1","Cluster_91","Cluster_133","Cluster_130","Cluster_109","Cluster_117","Cluster_345","Cluster_129","Cluster_362","Cluster_121","Cluster_1121","Cluster_241"],[48.1279498100131,95.5697168453137,175.520695579052,7.28330614313221,103.182897072088,29.6070594487572,73.9853349323687,27.5412117176504,119.149702683703,17.4581468308901,440.473499643303,33.7675002019195,6.12928656978209,9.56587461303537,79.3442900493407,87.6629321062275,2.91266376357887,104.939319000889,28.4347629501382,70.1359125500112,249.095251526235,73.2091252740564,13.3900590636893,50.235118306183,31.3747826853917,100.7768168067,94.3382389424038,30.4118578965894,131.020709458335,7.39872863263674,112.27557646384,98.4051590616358],[-2.47485486326461,-2.62944441805794,-2.0966167267443,2.1477588163896,3.10347087622621,3.46681468399298,3.59325731494064,3.17739727808018,-2.43054069078612,2.66323023021935,-1.15544224026351,-2.53938451236326,-2.7551342327851,3.17680586098858,-1.19000333308684,1.54514746854737,-1.28320985236248,-2.03874913350614,0.948290254176128,-1.76821448936753,-2.00609062537504,2.47701903712254,-2.08197747504601,1.44198509700113,1.42534202982733,-2.27838866445389,1.15723629325509,2.12391672000962,-1.19543879490198,2.00675932031324,-1.51171197755561,0.833369815421225],[0.618096857065189,0.635365760361543,0.582899104464828,0.586824472897231,0.500297634615471,0.685194190191076,0.735204980364451,0.744495421359076,0.608793807779403,0.684375148215539,0.299033605545281,0.664429973431281,0.805644325737746,0.948231149525039,0.370945104287691,0.493444871104408,0.428272457474477,0.681665786104237,0.340043997746352,0.294877500784082,0.43205480607051,0.585912288787473,0.579604023554428,0.436891518876275,0.44727256610428,0.392440855454534,0.233841110717745,0.48248165103181,0.27858332961194,0.534626855942208,0.45531012123114,0.268100711230022],[-4.00399198762403,-4.13847358812931,-3.5968775911386,3.65996804084503,6.20324914910209,5.05960898913373,4.88742243443374,4.26785334996398,-3.99238733989691,3.89147711918462,-3.86392104043486,-3.82189939332395,-3.41978978162871,3.35024414941422,-3.20803083618518,3.13134771284397,-2.99624650142007,-2.99083388819868,2.78872810713008,-5.99643745170735,-4.64313924342193,4.22762772606912,-3.59206870628375,3.30055639603635,3.1867414588871,-5.80568672396508,4.94881455918125,4.402067343841,-4.29113542639898,3.75356998626003,-3.32018092079307,3.10842075575928],[6.22824748896409e-05,3.49624111287885e-05,0.000322059947285731,0.000252246707150558,5.53091709348227e-10,4.2011709019761e-07,1.02164725668654e-06,1.97362998687696e-05,6.54114121103531e-05,9.96357864883453e-05,0.000111581303367966,0.000132427719438133,0.000626695446885399,0.000807403598406654,0.00133647168061454,0.0017400600497547,0.00273325388063147,0.00278216790768434,0.00529154686273337,2.0169324450394e-09,3.4315491324633e-06,2.36168114839785e-05,0.000328063323552275,0.000964933182510633,0.00143885330411277,6.41027204181205e-09,7.46668428393921e-07,1.07224261889146e-05,1.7776185863217e-05,0.000174333828871907,0.00089959128540959,0.00188090079187905],[0.00909324133388758,0.0051744368470607,0.0158882907327627,0.0158882907327627,7.46673807620107e-08,2.83579035883386e-05,4.59741265508945e-05,0.000666100120570975,0.00176610812697953,0.00215192513638221,0.00215192513638221,0.0022347177655185,0.00940043170328099,0.0108999485784898,0.0164021524439057,0.0195756755597404,0.0268280476812418,0.0268280476812418,0.0476239217646003,3.00522934310871e-07,0.000255650410368516,0.00117296830370427,0.0122203588023222,0.0287550088388169,0.0357315237188004,9.48720262188183e-07,5.52534637011502e-05,0.000528973025319787,0.000657718876939029,0.00516028133460844,0.0221899183734366,0.0397676167425857],["Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria"],["Firmicutes","Tenericutes","Bacteroidetes","Firmicutes","Firmicutes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Tenericutes","Epsilonbacteraeota","Firmicutes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes"],["Clostridia","Mollicutes","Bacteroidia","Clostridia","Clostridia","Bacteroidia","Bacteroidia","Bacteroidia","Bacteroidia","Clostridia","Clostridia","Clostridia","Clostridia","Bacteroidia","Clostridia","Clostridia","Clostridia","Mollicutes","Campylobacteria","Clostridia","Bacteroidia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia","Erysipelotrichia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia"],["Clostridiales","Anaeroplasmatales","Bacteroidales","Clostridiales","Clostridiales","Bacteroidales","Bacteroidales","Bacteroidales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Anaeroplasmatales","Campylobacterales","Clostridiales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Erysipelotrichales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales"],["Lachnospiraceae","Anaeroplasmataceae","Bacteroidaceae","Ruminococcaceae","Ruminococcaceae","Bacteroidaceae","Muribaculaceae","Rikenellaceae","Bacteroidaceae","Ruminococcaceae","Ruminococcaceae","Lachnospiraceae","Ruminococcaceae","Muribaculaceae","Lachnospiraceae","Ruminococcaceae","Family XIII","Anaeroplasmataceae","Campylobacteraceae","Lachnospiraceae","Bacteroidaceae","Ruminococcaceae","Lachnospiraceae","Ruminococcaceae","Lachnospiraceae","Christensenellaceae","Erysipelotrichaceae","Ruminococcaceae","Lachnospiraceae","Ruminococcaceae","Ruminococcaceae","Eubacteriaceae"],["Fusicatenibacter","unknown genus","Bacteroides","Ruminococcus","Ruminoclostridium","Bacteroides","unknown genus","unknown genus","Bacteroides","Ruminococcaceae UCG-014","Ruminococcaceae V9D2013 group","Multi-affiliation","Ruminococcaceae V9D2013 group","unknown genus","Multi-affiliation","Ruminococcus","Family XIII AD3011 group","unknown genus","Campylobacter","Multi-affiliation","Bacteroides","Ruminococcus","Tyzzerella 3","unknown genus","unknown genus","Christensenellaceae R-7 group","unknown genus","CAG-352","Multi-affiliation","unknown genus","Ruminococcaceae V9D2013 group","unknown genus"],["unknown species","unknown species","Multi-affiliation","unknown species","unknown species","Multi-affiliation","unknown species","unknown species","Multi-affiliation","unknown species","unknown species","Multi-affiliation","unknown species","unknown species","Multi-affiliation","metagenome","unknown species","unknown species","Campylobacter cuniculorum","Multi-affiliation","Multi-affiliation","unknown species","unknown species","unknown species","unknown species","unknown species","unknown species","unknown species","Multi-affiliation","unknown species","unknown species","unknown species"],["18","25","25","25","30","30","30","30","30","30","30","30","30","30","30","30","30","30","30","38","38","38","38","38","38","58","58","58","58","58","58","58"],["Cluster_69","Cluster_33","Cluster_10","Cluster_39","Cluster_16","Cluster_8","Cluster_28","Cluster_43","Cluster_101","Cluster_207","Cluster_44","Cluster_78","Cluster_112","Cluster_176","Cluster_36","Cluster_32","Cluster_34","Cluster_331","Cluster_45","Cluster_361","Cluster_1","Cluster_91","Cluster_133","Cluster_130","Cluster_109","Cluster_117","Cluster_345","Cluster_129","Cluster_362","Cluster_121","Cluster_1121","Cluster_241"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>baseMean<\/th>\n      <th>log2FoldChange<\/th>\n      <th>lfcSE<\/th>\n      <th>stat<\/th>\n      <th>pvalue<\/th>\n      <th>padj<\/th>\n      <th>Kingdom<\/th>\n      <th>Phylum<\/th>\n      <th>Class<\/th>\n      <th>Order<\/th>\n      <th>Family<\/th>\n      <th>Genus<\/th>\n      <th>Species<\/th>\n      <th>AGE<\/th>\n      <th>names<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 sigtabOTU<-subset(sigtabOTU, log2FoldChange>2|log2FoldChange<(-2))
 sigtabOTU<-sigtabOTU[order(sigtabOTU$log2FoldChange),] 
@@ -3259,7 +3154,7 @@ ggplot(sigtabOTU, aes(y=names,x=-log2FoldChange, color=AGE)) +
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) + ggtitle(" ")+ theme(plot.title = element_text(size=14,face="bold", hjust = 0.5)) 
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-69-2.png)<!-- -->
+![](fig/deseq2.png)<!-- -->
 
 ### Appendix vermiformis
 
@@ -3492,9 +3387,6 @@ sigtabOTU$Genus = factor(as.character(sigtabOTU$Genus), levels=names(x))
 datatable(sigtabOTU, colnames=c("baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species", "AGE", "names")) %>% formatRound(columns=c("baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj"), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-7685fbf05feed9490af1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7685fbf05feed9490af1">{"x":{"filter":"none","data":[["Cluster_43","Cluster_29","Cluster_196","Cluster_291","Cluster_190","Cluster_103","Cluster_10","Cluster_49","Cluster_46","Cluster_95","Cluster_59","Cluster_106","Cluster_174","Cluster_117","Cluster_121","Cluster_101","Cluster_322","Cluster_307"],[67.9966853585537,56.0914272164316,10.3246816606132,180.627684360164,70.1509249175176,209.468721143378,109.52249589869,13.8643461961101,220.099157884732,41.4857287961139,49.0402420736213,4.61931768755859,103.17888766942,13.379815125207,56.1208488762269,18.0342585349314,3.28674826855934,45.0255151148759],[-2.05278093179574,-1.8442548521357,-1.81005073302976,-3.14152264436155,2.49627844209864,-2.18276549932189,1.76333633814296,1.35400431766109,1.30835976454791,-1.49484395253505,-1.50892419787537,-1.64833793170236,1.05895826318612,-1.57859346253479,-2.25292371461885,-1.52147894540723,-2.04424303330858,2.89580920051206],[0.481520817112925,0.457576230652164,0.539081601962624,0.516527634452139,0.499673321510447,0.491724547693078,0.444205454243731,0.389691633436983,0.392073523672773,0.459656773313385,0.47060791485797,0.518472836393118,0.347346893729703,0.541722530468177,0.572570238945706,0.407960951139209,0.570533261984449,0.845362062874772],[-4.26311980467155,-4.03048656943383,-3.35765629255375,-6.08200304267097,4.99582093867393,-4.43900047203728,3.96964134793229,3.47455321459973,3.33702656657803,-3.25208729496061,-3.20632983474315,-3.17921753272442,3.04870514837589,-2.91402585964167,-3.93475518176991,-3.72947200254971,-3.58303918372475,3.42552537863416],[2.01592362811241e-05,5.56615095438233e-05,0.000786062900160296,1.18690315586404e-09,5.85860024517814e-07,9.03776184218037e-06,7.1980896452345e-05,0.00051170485673957,0.000846798535200814,0.00114560831298543,0.00134439792521586,0.00147673220783253,0.00229829932042024,0.00356800349401699,8.32815430997445e-05,0.000191881424212453,0.000339619639135971,0.000613611605311526],[0.00268117842538951,0.00370149038466425,0.0348487885737731,1.37680766080228e-07,3.39798814220332e-05,0.000349460124564307,0.002087445997118,0.011871552676358,0.0163714383472157,0.0189843663294729,0.019033437345397,0.019033437345397,0.0266602721168748,0.0376262186641791,0.011076445232266,0.0127601147101281,0.0150564706683614,0.0204025858766082],["Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria"],["Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Firmicutes","Firmicutes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Bacteroidetes","Bacteroidetes","Proteobacteria"],["Bacteroidia","Bacteroidia","Bacteroidia","Bacteroidia","Clostridia","Clostridia","Bacteroidia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia","Bacteroidia","Bacteroidia","Gammaproteobacteria"],["Bacteroidales","Bacteroidales","Bacteroidales","Bacteroidales","Clostridiales","Clostridiales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Bacteroidales","Bacteroidales","Pasteurellales"],["Rikenellaceae","Rikenellaceae","Muribaculaceae","Rikenellaceae","Lachnospiraceae","Ruminococcaceae","Bacteroidaceae","Lachnospiraceae","Ruminococcaceae","Ruminococcaceae","Ruminococcaceae","Eubacteriaceae","Christensenellaceae","Christensenellaceae","Ruminococcaceae","Bacteroidaceae","Muribaculaceae","Pasteurellaceae"],["unknown genus","Rikenellaceae RC9 gut group","unknown genus","Rikenellaceae RC9 gut group","Multi-affiliation","Ruminococcus","Bacteroides","Multi-affiliation","Ruminococcus","Ruminoclostridium","Ruminococcus","unknown genus","Christensenellaceae R-7 group","Christensenellaceae R-7 group","unknown genus","Bacteroides","unknown genus","Rodentibacter"],["unknown species","unknown species","unknown species","unknown species","Multi-affiliation","unknown species","Multi-affiliation","Multi-affiliation","unknown species","unknown species","Multi-affiliation","unknown species","Multi-affiliation","unknown species","unknown species","Multi-affiliation","unknown species","Rodentibacter ratti"],["25","25","25","30","30","30","30","30","30","30","30","30","30","30","58","58","58","58"],["Cluster_43","Cluster_29","Cluster_196","Cluster_291","Cluster_190","Cluster_103","Cluster_10","Cluster_49","Cluster_46","Cluster_95","Cluster_59","Cluster_106","Cluster_174","Cluster_117","Cluster_121","Cluster_101","Cluster_322","Cluster_307"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>baseMean<\/th>\n      <th>log2FoldChange<\/th>\n      <th>lfcSE<\/th>\n      <th>stat<\/th>\n      <th>pvalue<\/th>\n      <th>padj<\/th>\n      <th>Kingdom<\/th>\n      <th>Phylum<\/th>\n      <th>Class<\/th>\n      <th>Order<\/th>\n      <th>Family<\/th>\n      <th>Genus<\/th>\n      <th>Species<\/th>\n      <th>AGE<\/th>\n      <th>names<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 sigtabOTU<-subset(sigtabOTU, log2FoldChange>2|log2FoldChange<(-2))
 sigtabOTU<-sigtabOTU[order(sigtabOTU$log2FoldChange),] 
@@ -3510,7 +3402,7 @@ ggplot(sigtabOTU, aes(y=names,x=-log2FoldChange, color=AGE)) +
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) + ggtitle(" ")+ theme(plot.title = element_text(size=14,face="bold", hjust = 0.5)) 
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-70-2.png)<!-- -->
+![](fig/deseq3.png)<!-- -->
 
 __Comparison STA+/RFF+__
 
@@ -3597,9 +3489,6 @@ sigtabOTU$Genus = factor(as.character(sigtabOTU$Genus), levels=names(x))
 datatable(sigtabOTU, colnames=c("baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species", "AGE", "names")) %>% formatRound(columns=c("baseMean", "log2FoldChange", "lfcSE", "stat", "pvalue", "padj"), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-d17f2394f72b01b96dae" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d17f2394f72b01b96dae">{"x":{"filter":"none","data":[["Cluster_33","Cluster_55","Cluster_70","Cluster_39","Cluster_40","Cluster_10","Cluster_62","Cluster_91","Cluster_36","Cluster_361","Cluster_103","Cluster_101","Cluster_51","Cluster_331","Cluster_64","Cluster_99","Cluster_134","Cluster_49","Cluster_95","Cluster_362","Cluster_1","Cluster_7","Cluster_26","Cluster_22","Cluster_118","Cluster_224","Cluster_144","Cluster_87","Cluster_50","Cluster_130","Cluster_24","Cluster_117","Cluster_121","Cluster_241","Cluster_401","Cluster_307","Cluster_8"],[70.785537749107,19.323689536346,73.2307303201347,9.86589502974158,207.750329284712,229.973161484657,43.9598774142749,24.8415189423385,261.860189569823,206.986203514872,200.842638015213,147.952822919443,80.0729098513407,77.652870776054,67.9293094379096,64.8013960853687,19.1899346254564,15.0610151338964,43.2715955860489,115.804381099872,337.097913297454,178.448747739159,272.335225260939,210.273787703464,87.1228687579644,60.302751606938,9.09030931273917,188.17708111214,25.3447190401887,89.1389287136944,22.4772050173319,107.520159772411,59.351705830415,69.5896890202094,36.7778465673478,117.488779929361,84.4477860217707],[-3.73067842626395,2.26211525464996,-2.26228545134496,1.54309408168088,1.62128925367986,-1.49943857416479,-1.87407421147394,1.85994366453961,-1.07129073345577,-1.22846508197817,2.15063005249968,-1.9476730805916,1.47987563961378,-1.80292010484003,2.13342784026562,-1.26387646104575,1.27194937096473,-1.40394512681267,1.46513030526196,-1.38472504577547,-1.46066881816629,-1.02689282053363,-2.69346234540492,-1.80046752934042,0.850944625411145,1.495025371535,2.11185771423152,1.4622913086838,-1.24133836065188,1.36899381290899,-1.48639649557906,-2.07818239130427,2.73944012321596,1.21954573269843,1.47049704598252,-3.4998727479218,1.56667202282567],[0.696410294569205,0.489030372655601,0.580490748910769,0.445740936967849,0.499619671188625,0.468681013398551,0.576869225950095,0.589327001459055,0.357144188948429,0.246941971331771,0.486492060881456,0.469420947970038,0.373037529750241,0.468706749872795,0.590282611416374,0.373467822789303,0.434856702842762,0.471850504027077,0.501187463463402,0.257306866496185,0.289169051611767,0.227505974887643,0.610775606348149,0.448076088521732,0.237860184053902,0.43755783465417,0.620857236373725,0.45127779407376,0.430238611715755,0.479214367355436,0.520624010835976,0.366222793975868,0.627859203488851,0.320382001538785,0.430448278463143,1.04110654376882,0.483121920973025],[-5.35701217422659,4.62571525438369,-3.89719466777016,3.46186305475501,3.2450468770029,-3.19927313311008,-3.24869853888871,3.15604691442062,-2.99960286799027,-4.97471157030534,4.42068889799156,-4.14909707164563,3.96709585924128,-3.84658446956296,3.61424815673714,-3.38416426777088,2.92498508738556,-2.9754024099381,2.92331794402306,-5.38160937806144,-5.05126260927589,-4.51369605145877,-4.4099049101015,-4.01821827913295,3.5774992304652,3.41674917720675,3.40151904577349,3.2403351724521,-2.88523234979196,2.85674617909274,-2.85502870524994,-5.67463966058107,4.3631440106215,3.8065363436179,3.41619915691783,-3.36168547673537,3.24280881246361],[8.46094215984473e-08,3.7330787375377e-06,9.73133952977913e-05,0.000536450042880783,0.00117431290578606,0.00137774573892028,0.0011593427229417,0.0015992313554144,0.00270331821862528,6.53448612790944e-07,9.83867357028841e-06,3.33789254954342e-05,7.27537357646817e-05,0.000119775849420323,0.000301220449639898,0.000713952744692707,0.00344472730356278,0.00292604433956033,0.0034632268341432,7.38228249489433e-08,4.38899162596145e-07,6.37075024005733e-06,1.03416020022415e-05,5.86398638759149e-05,0.000346897240359657,0.000633736383787129,0.000670124588902154,0.00119389273529799,0.00391124878946544,0.00428007952760028,0.00430329392769522,1.38980891453154e-08,1.28206486925811e-05,0.000140926591374715,0.000635017864327009,0.000774683091924166,0.00118357604899376],[1.09146153861997e-05,0.000489033314617438,0.00637402739200533,0.0234249852057942,0.0299284725084695,0.0299284725084695,0.0299284725084695,0.0299284725084695,0.044266835829989,8.56017682756137e-05,0.000644433118853891,0.00145754641330063,0.00238268484629332,0.00313812725481246,0.00657664648380443,0.0133611156506778,0.045368271527276,0.045368271527276,0.045368271527276,8.63727051902637e-06,2.56756010118745e-05,0.000248459259362236,0.000302491858565563,0.00137217281469641,0.00676449618701331,0.009800572112694,0.009800572112694,0.0155206055588739,0.0419571157950284,0.0419571157950284,0.0419571157950284,1.84844585632695e-06,0.000852573138056642,0.0062477455509457,0.0206065702451828,0.0206065702451828,0.0262359357526951],["Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria","Bacteria"],["Tenericutes","Firmicutes","Firmicutes","Firmicutes","Bacteroidetes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Bacteroidetes","Firmicutes","Tenericutes","Firmicutes","Firmicutes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Bacteroidetes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Firmicutes","Bacteroidetes","Proteobacteria","Bacteroidetes"],["Mollicutes","Clostridia","Clostridia","Clostridia","Bacteroidia","Bacteroidia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia","Bacteroidia","Clostridia","Mollicutes","Clostridia","Clostridia","Bacteroidia","Clostridia","Clostridia","Clostridia","Bacteroidia","Bacteroidia","Bacteroidia","Bacteroidia","Clostridia","Clostridia","Clostridia","Clostridia","Bacteroidia","Clostridia","Clostridia","Clostridia","Clostridia","Clostridia","Bacteroidia","Gammaproteobacteria","Bacteroidia"],["Anaeroplasmatales","Clostridiales","Clostridiales","Clostridiales","Bacteroidales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Bacteroidales","Clostridiales","Anaeroplasmatales","Clostridiales","Clostridiales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Bacteroidales","Bacteroidales","Bacteroidales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Bacteroidales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Clostridiales","Bacteroidales","Pasteurellales","Bacteroidales"],["Anaeroplasmataceae","Ruminococcaceae","Lachnospiraceae","Ruminococcaceae","Bacteroidaceae","Bacteroidaceae","Lachnospiraceae","Ruminococcaceae","Lachnospiraceae","Lachnospiraceae","Ruminococcaceae","Bacteroidaceae","Ruminococcaceae","Anaeroplasmataceae","Lachnospiraceae","Ruminococcaceae","Bacteroidaceae","Lachnospiraceae","Ruminococcaceae","Lachnospiraceae","Bacteroidaceae","Bacteroidaceae","Rikenellaceae","Rikenellaceae","Ruminococcaceae","Eubacteriaceae","Eubacteriaceae","Ruminococcaceae","Marinifilaceae","Ruminococcaceae","Ruminococcaceae","Christensenellaceae","Ruminococcaceae","Eubacteriaceae","Bacteroidaceae","Pasteurellaceae","Bacteroidaceae"],["unknown genus","Ruminoclostridium","unknown genus","Ruminococcus","Bacteroides","Bacteroides","Coprococcus","Ruminococcus","Multi-affiliation","Multi-affiliation","Ruminococcus","Bacteroides","Ruminococcus","unknown genus","Lachnospiraceae NK4A136 group","Ruminococcaceae V9D2013 group","Bacteroides","Multi-affiliation","Ruminoclostridium","Multi-affiliation","Bacteroides","Bacteroides","Alistipes","Alistipes","Subdoligranulum","unknown genus","unknown genus","unknown genus","Butyricimonas","unknown genus","[Eubacterium] coprostanoligenes group","Christensenellaceae R-7 group","unknown genus","unknown genus","Bacteroides","Rodentibacter","Bacteroides"],["unknown species","unknown species","unknown species","unknown species","Multi-affiliation","Multi-affiliation","unknown species","unknown species","Multi-affiliation","Multi-affiliation","unknown species","Multi-affiliation","unknown species","unknown species","unknown species","unknown species","Multi-affiliation","Multi-affiliation","unknown species","Multi-affiliation","Multi-affiliation","Multi-affiliation","Multi-affiliation","Multi-affiliation","unknown species","unknown species","unknown species","unknown species","unknown species","unknown species","unknown species","unknown species","unknown species","unknown species","Multi-affiliation","Rodentibacter ratti","Multi-affiliation"],["18","25","25","25","25","25","25","25","25","30","30","30","30","30","30","30","30","30","30","38","38","38","38","38","38","38","38","38","38","38","38","58","58","58","58","58","58"],["Cluster_33","Cluster_55","Cluster_70","Cluster_39","Cluster_40","Cluster_10","Cluster_62","Cluster_91","Cluster_36","Cluster_361","Cluster_103","Cluster_101","Cluster_51","Cluster_331","Cluster_64","Cluster_99","Cluster_134","Cluster_49","Cluster_95","Cluster_362","Cluster_1","Cluster_7","Cluster_26","Cluster_22","Cluster_118","Cluster_224","Cluster_144","Cluster_87","Cluster_50","Cluster_130","Cluster_24","Cluster_117","Cluster_121","Cluster_241","Cluster_401","Cluster_307","Cluster_8"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>baseMean<\/th>\n      <th>log2FoldChange<\/th>\n      <th>lfcSE<\/th>\n      <th>stat<\/th>\n      <th>pvalue<\/th>\n      <th>padj<\/th>\n      <th>Kingdom<\/th>\n      <th>Phylum<\/th>\n      <th>Class<\/th>\n      <th>Order<\/th>\n      <th>Family<\/th>\n      <th>Genus<\/th>\n      <th>Species<\/th>\n      <th>AGE<\/th>\n      <th>names<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4,5,6],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 sigtabOTU<-subset(sigtabOTU, log2FoldChange>2|log2FoldChange<(-2))
 sigtabOTU<-sigtabOTU[order(sigtabOTU$log2FoldChange),] 
@@ -3615,7 +3504,8 @@ ggplot(sigtabOTU, aes(y=names,x=-log2FoldChange, color=AGE)) +
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) + ggtitle(" ")+ theme(plot.title = element_text(size=14,face="bold", hjust = 0.5)) 
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-71-2.png)<!-- -->
+![](fig/deseq4.png)<!-- -->
+
 
 ## Analyzis of PICRUSt output
 
@@ -3678,8 +3568,6 @@ rownames(result)<-colnames(pathway_norm_caecum_EARLY[2:340])
 datatable(result)
 ```
 
-<!--html_preserve--><div id="htmlwidget-40a8e355a85c25150405" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-40a8e355a85c25150405">{"x":{"filter":"none","data":[["X1CMET2.PWY","X3.HYDROXYPHENYLACETATE.DEGRADATION.PWY","AEROBACTINSYN.PWY","ALL.CHORISMATE.PWY","ANAEROFRUCAT.PWY","ANAGLYCOLYSIS.PWY","ARG.POLYAMINE.SYN","ARGDEG.PWY","ARGORNPROST.PWY","ARGSYN.PWY","ARGSYNBSUB.PWY","ARO.PWY","ASPASN.PWY","AST.PWY","BIOTIN.BIOSYNTHESIS.PWY","BRANCHED.CHAIN.AA.SYN.PWY","CALVIN.PWY","CENTFERM.PWY","COA.PWY","COBALSYN.PWY","CODH.PWY","COLANSYN.PWY","COMPLETE.ARO.PWY","CRNFORCAT.PWY","DAPLYSINESYN.PWY","DENITRIFICATION.PWY","DENOVOPURINE2.PWY","DHGLUCONATE.PYR.CAT.PWY","DTDPRHAMSYN.PWY","ECASYN.PWY","ENTBACSYN.PWY","FASYN.ELONG.PWY","FASYN.INITIAL.PWY","FERMENTATION.PWY","FOLSYN.PWY","FUC.RHAMCAT.PWY","FUCCAT.PWY","GALACT.GLUCUROCAT.PWY","GALACTARDEG.PWY","GALACTUROCAT.PWY","GALLATE.DEGRADATION.I.PWY","GALLATE.DEGRADATION.II.PWY","GLCMANNANAUT.PWY","GLUCARDEG.PWY","GLUCARGALACTSUPER.PWY","GLUCONEO.PWY","GLUCOSE1PMETAB.PWY","GLUTORN.PWY","GLYCOCAT.PWY","GLYCOGENSYNTH.PWY","GLYCOL.GLYOXDEG.PWY","GLYCOLYSIS","GLYCOLYSIS.E.D","GLYCOLYSIS.TCA.GLYOX.BYPASS","GLYOXYLATE.BYPASS","GOLPDLCAT.PWY","HCAMHPDEG.PWY","HEME.BIOSYNTHESIS.II","HEMESYN2.PWY","HEXITOLDEGSUPER.PWY","HISDEG.PWY","HISTSYN.PWY","HOMOSER.METSYN.PWY","HSERMETANA.PWY","ILEUSYN.PWY","KDO.NAGLIPASYN.PWY","KETOGLUCONMET.PWY","LACTOSECAT.PWY","LEU.DEG2.PWY","LPSSYN.PWY","MET.SAM.PWY","METH.ACETATE.PWY","METHGLYUT.PWY","METHYLGALLATE.DEGRADATION.PWY","NAD.BIOSYNTHESIS.II","NAGLIPASYN.PWY","NONMEVIPP.PWY","NONOXIPENT.PWY","OANTIGEN.PWY","ORNARGDEG.PWY","ORNDEG.PWY","P105.PWY","P108.PWY","P122.PWY","P124.PWY","P125.PWY","P161.PWY","P162.PWY","P163.PWY","P164.PWY","P221.PWY","P23.PWY","P281.PWY","P341.PWY","P381.PWY","P4.PWY","P42.PWY","P441.PWY","P461.PWY","P562.PWY","PANTO.PWY","PANTOSYN.PWY","PENTOSE.P.PWY","PEPTIDOGLYCANSYN.PWY","PHOSLIPSYN.PWY","POLYAMINSYN3.PWY","POLYAMSYN.PWY","POLYISOPRENSYN.PWY","PPGPPMET.PWY","PROTOCATECHUATE.ORTHO.CLEAVAGE.PWY","PRPP.PWY","PWY.1269","PWY.1361","PWY.1501","PWY.181","PWY.1861","PWY.2941","PWY.2942","PWY.3001","PWY.3661","PWY.3781","PWY.4984","PWY.5005","PWY.5022","PWY.5028","PWY.5097","PWY.5100","PWY.5101","PWY.5103","PWY.5104","PWY.5121","PWY.5154","PWY.5177","PWY.5178","PWY.5180","PWY.5181","PWY.5182","PWY.5188","PWY.5189","PWY.5265","PWY.5304","PWY.5345","PWY.5347","PWY.5384","PWY.5415","PWY.5417","PWY.5419","PWY.5420","PWY.5430","PWY.5484","PWY.5505","PWY.5507","PWY.5509","PWY.5654","PWY.5659","PWY.5667","PWY.5676","PWY.5677","PWY.5686","PWY.5695","PWY.5705","PWY.5747","PWY.5837","PWY.5838","PWY.5840","PWY.5845","PWY.5850","PWY.5855","PWY.5856","PWY.5857","PWY.5860","PWY.5861","PWY.5862","PWY.5863","PWY.5896","PWY.5897","PWY.5898","PWY.5899","PWY.5910","PWY.5913","PWY.5918","PWY.5920","PWY.5971","PWY.5973","PWY.5989","PWY.6071","PWY.6121","PWY.6122","PWY.6123","PWY.6125","PWY.6126","PWY.6143","PWY.6147","PWY.6151","PWY.6163","PWY.6165","PWY.6182","PWY.6185","PWY.621","PWY.6263","PWY.6269","PWY.6277","PWY.6282","PWY.6317","PWY.6353","PWY.6383","PWY.6385","PWY.6386","PWY.6387","PWY.6396","PWY.6397","PWY.6467","PWY.6471","PWY.6507","PWY.6519","PWY.6545","PWY.6562","PWY.6572","PWY.6588","PWY.6590","PWY.6608","PWY.6609","PWY.6612","PWY.6628","PWY.6629","PWY.6630","PWY.6660","PWY.6690","PWY.6700","PWY.6703","PWY.6708","PWY.6728","PWY.6737","PWY.6749","PWY.6876","PWY.6891","PWY.6892","PWY.6895","PWY.6897","PWY.6901","PWY.6906","PWY.6969","PWY.6992","PWY.7003","PWY.7007","PWY.7013","PWY.7031","PWY.7094","PWY.7111","PWY.7184","PWY.7187","PWY.7196","PWY.7197","PWY.7198","PWY.7199","PWY.7200","PWY.7208","PWY.7210","PWY.7211","PWY.7219","PWY.7220","PWY.7221","PWY.7222","PWY.7228","PWY.7229","PWY.7234","PWY.7237","PWY.7242","PWY.7254","PWY.7315","PWY.7323","PWY.7328","PWY.7332","PWY.7371","PWY.7373","PWY.7374","PWY.7376","PWY.7377","PWY.7392","PWY.7400","PWY.7431","PWY.7446","PWY.7456","PWY.7527","PWY.7539","PWY.7560","PWY.7616","PWY.7663","PWY.7664","PWY.841","PWY.922","PWY0.1061","PWY0.1261","PWY0.1277","PWY0.1296","PWY0.1297","PWY0.1298","PWY0.1319","PWY0.1338","PWY0.1415","PWY0.1479","PWY0.1533","PWY0.1586","PWY0.162","PWY0.166","PWY0.321","PWY0.41","PWY0.42","PWY0.781","PWY0.845","PWY0.862","PWY1G.0","PWY490.3","PWY4FS.7","PWY4FS.8","PWYG.321","PYRIDNUCSAL.PWY","PYRIDNUCSYN.PWY","PYRIDOXSYN.PWY","REDCITCYC","RHAMCAT.PWY","RIBOSYN2.PWY","RUMP.PWY","SALVADEHYPOX.PWY","SER.GLYSYN.PWY","SO4ASSIM.PWY","SULFATE.CYS.PWY","TCA","TCA.GLYOX.BYPASS","TEICHOICACID.PWY","THISYN.PWY","THREOCAT.PWY","THRESYN.PWY","TRNA.CHARGING.PWY","TRPSYN.PWY","TYRFUMCAT.PWY","UBISYN.PWY","UDPNAGSYN.PWY","VALSYN.PWY"],[0,0,0.075,0,0,0,0,0,0,0,0,0,0.119,0,0,0,0,0,0,0,0,0,0,0.022,0,0,0,0,0,0,0,0,0,0,0,0,0.011,0.009,0,0,0,0,0,0.006,0,0,0,0,0,0,0,0,0,0,0,0,0,0.001,0,0.582,0,0,0.946,0,0,0,0,0,0,0,0.932,0,0,0,0.417,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.001,0,0.627,0,0,0,0.003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.008,0,0,0,0,0,0.003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.511,0,0.042,0.908,0,0,0,0,0,0,0,0,0,0,0,0.003,0,0,0,0,0,0.057,0,0.008,0.001,0.001,0,0,0,0,0,0,0.001,0,0.008,0,0.001,0.001,0.001,0.564,0,0.001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.099,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.102,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.003,0,0,0,0.196,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.075,0,0,0,0,0,0,0,0,0.564,0.097,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.005,0,0,0,0,0,0,0,0,0],[0.263,0.332,0.962,0.056,0.796,0.174,0.263,0.118,0.407,0.038,0.041,0.131,0.099,0.125,0.344,0.122,0.569,0.432,0.115,0.843,0.715,0.891,0.14,0.338,0.085,0.263,0.06,0.263,0.668,0.125,0.111,0.178,0.382,0.668,0.062,0.835,0.332,0.056,0.953,0.03,0.344,0.344,0.111,0.443,0.953,0.38,0.131,0.03,0.85,0.191,0.668,0.843,0.11,0.114,0.486,0.347,0.344,0.687,0.322,0.236,0.037,0.056,0.062,0.121,0.263,0.118,0.263,0.058,0.89,0.263,0.062,0.012,0.145,0.344,0.953,0.114,0.13,0.131,0.037,0.118,0.114,0.056,0.056,0.263,0.308,0.358,0.056,0.955,0.64,0.684,0.118,0.845,0.263,0.89,0.263,0.461,0.651,0.199,0.89,0.654,0.037,0.063,0.97,0.09,0.05,0.44,0.242,0.199,0.131,0.338,0.7,0.17,0.263,0.263,0.94,0.849,0.114,0.365,0.344,0.263,0.599,0.953,0.263,0.242,0.263,0.332,0.333,0.249,0.222,0.263,0.125,0.056,0.719,0.263,0.037,0.344,0.037,0.322,0.399,0.38,0.038,0.892,0.062,0.114,0.056,0.344,0.056,0.056,0.178,0.886,0.7,0.263,0.652,0.263,0.533,0.125,0.886,0.277,0.214,0.178,0.408,0.904,0.432,0.443,0.443,0.64,0.64,0.307,0.307,0.307,0.647,0.453,0.647,0.432,0.64,0.443,0.443,0.443,0.372,0.962,0.682,0.55,0.668,0.111,0.38,0.344,0.056,0.103,0.35,0.062,0.715,0.249,0.002,0.85,0.235,0.735,0.344,0.344,0.243,0.13,0.657,0.103,0.382,0.89,0.43,0.263,0.099,0.085,0.085,0.955,0.263,0.115,0.822,0.012,0.349,0.911,0.35,0.263,0.887,0.44,0.603,0.256,0.056,0.263,0.162,0.263,0.263,0.344,0.312,0.249,0.307,0.969,0.326,0.114,0.263,0.03,0.847,0.178,0.037,0.953,0.263,0.397,0.263,0.056,0.263,0.64,0.257,0.724,0.101,0.118,0.181,0.056,0.145,0.058,0.002,0.056,0.115,0.056,0.944,0.114,0.256,0.199,0.256,0.075,0.89,0.843,0.056,0.03,0.178,0.733,0.198,0.182,0.039,0.081,0.228,0.24,0.263,0.37,0.199,0.038,0.89,0.97,0.145,0.056,0.005,0.13,0.263,0.998,0.382,0.079,0.372,0.461,0.625,0.333,0.7,0.396,0.358,0.125,0.101,0.531,0.031,0.993,0.371,0.056,0.205,0.344,0.955,0.263,0.27,0.308,0.382,0.263,0.43,0.03,0.03,0.382,0.056,0.967,0.263,0.368,0.031,0.263,0.849,0.478,0.312,0.881,0.878,0.953,0.114,0.145,0.312,0.332,0.571,0.131,0.369,0.657,0.316,0.038,0.263],[0.873,0.817,1,0.817,0.849,0.492,0.626,0.817,0.817,0.75,0.786,0.774,0.788,0.873,0.384,0.684,0.617,0.883,0.636,0.943,0.817,0.492,0.771,0.748,0.696,0.156,0.229,0.156,0.791,0.873,0.817,0.617,0.498,0.672,0.226,0.96,0.774,0.698,0.861,0.817,0.817,0.817,0.817,0.75,0.861,0.748,0.873,0.748,0.531,0.849,0.817,0.873,0.96,0.696,0.817,0.873,0.817,0.924,0.971,0.75,0.843,0.333,0.942,0.562,0.817,0.873,0.156,0.942,0.748,0.156,0.943,0.914,0.791,0.817,0.817,0.817,0.672,0.817,0.814,0.817,0.817,0.883,0.942,0.914,0.817,0.156,0.748,0.286,0.594,0.817,0.319,0.892,0.156,0.817,0.156,0.883,0.883,0.96,0.229,0.887,0.558,0.817,0.817,0.594,0.617,0.885,0.67,0.873,0.873,0.817,0.96,0.817,0.156,0.156,0.971,0.156,0.817,0.451,0.705,0.156,0.862,0.43,0.156,0.943,0.156,0.381,0.75,0.814,0.672,0.817,0.669,0.924,0.924,0.156,0.829,0.817,0.829,0.791,0.817,0.873,0.938,0.75,0.954,0.229,0.735,0.817,0.672,0.709,0.214,0.873,0.873,0.156,0.943,0.156,0.75,0.672,0.792,0.492,0.67,0.861,0.36,0.786,0.887,0.873,0.873,0.96,0.96,0.492,0.492,0.492,0.96,0.873,0.96,0.887,0.96,0.873,0.873,0.873,0.791,0.924,0.913,0.943,0.647,0.75,0.502,0.817,0.398,0.683,0.672,0.229,0.384,0.531,0.914,0.75,0.76,0.99,0.817,0.817,0.748,0.96,0.943,0.683,0.492,0.814,0.451,0.156,0.502,0.523,0.575,0.924,0.156,0.817,0.924,0.862,0.456,0.647,0.814,0.847,0.672,0.887,0.669,0.579,0.181,0.817,0.791,0.817,0.156,0.817,0.748,0.241,0.492,0.774,0.862,0.817,0.156,0.75,0.964,0.817,0.672,0.817,0.156,0.943,0.156,0.892,0.156,0.563,0.512,0.709,0.873,0.23,0.229,0.226,0.264,0.705,0.791,0.23,0.672,0.696,0.873,0.672,0.896,0.362,0.896,0.23,0.257,0.96,0.229,0.817,0.748,0.709,0.914,0.502,0.273,0.988,0.552,0.924,0.156,0.36,0.914,0.748,0.817,1,0.819,0.75,0.992,0.672,0.156,0.817,0.492,0.229,0.791,0.924,0.873,0.817,0.924,0.817,0.814,0.672,0.817,0.672,0.819,0.75,0.819,0.264,0.241,0.817,0.229,0.156,0.829,0.594,0.492,0.156,0.688,0.672,0.672,0.492,0.957,0.492,0.672,0.817,0.942,0.492,0.156,0.617,0.636,0.36,0.36,0.964,0.688,0.761,0.971,0.817,0.791,0.672,0.65,0.748,0.498,0.819,0.817]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGE_GROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 __Comparison STA+/RFF+__
 
@@ -3710,8 +3598,6 @@ rownames(result)<-colnames(pathway_norm_caecum_STA[2:340])
 datatable(result)
 ```
 
-<!--html_preserve--><div id="htmlwidget-abc530e4031c639e6543" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-abc530e4031c639e6543">{"x":{"filter":"none","data":[["X1CMET2.PWY","X3.HYDROXYPHENYLACETATE.DEGRADATION.PWY","AEROBACTINSYN.PWY","ALL.CHORISMATE.PWY","ANAEROFRUCAT.PWY","ANAGLYCOLYSIS.PWY","ARG.POLYAMINE.SYN","ARGDEG.PWY","ARGORNPROST.PWY","ARGSYN.PWY","ARGSYNBSUB.PWY","ARO.PWY","ASPASN.PWY","AST.PWY","BIOTIN.BIOSYNTHESIS.PWY","BRANCHED.CHAIN.AA.SYN.PWY","CALVIN.PWY","CENTFERM.PWY","COA.PWY","COBALSYN.PWY","CODH.PWY","COLANSYN.PWY","COMPLETE.ARO.PWY","CRNFORCAT.PWY","DAPLYSINESYN.PWY","DENITRIFICATION.PWY","DENOVOPURINE2.PWY","DHGLUCONATE.PYR.CAT.PWY","DTDPRHAMSYN.PWY","ECASYN.PWY","ENTBACSYN.PWY","FASYN.ELONG.PWY","FASYN.INITIAL.PWY","FERMENTATION.PWY","FOLSYN.PWY","FUC.RHAMCAT.PWY","FUCCAT.PWY","GALACT.GLUCUROCAT.PWY","GALACTARDEG.PWY","GALACTUROCAT.PWY","GALLATE.DEGRADATION.I.PWY","GALLATE.DEGRADATION.II.PWY","GLCMANNANAUT.PWY","GLUCARDEG.PWY","GLUCARGALACTSUPER.PWY","GLUCONEO.PWY","GLUCOSE1PMETAB.PWY","GLUTORN.PWY","GLYCOCAT.PWY","GLYCOGENSYNTH.PWY","GLYCOL.GLYOXDEG.PWY","GLYCOLYSIS","GLYCOLYSIS.E.D","GLYCOLYSIS.TCA.GLYOX.BYPASS","GLYOXYLATE.BYPASS","GOLPDLCAT.PWY","HCAMHPDEG.PWY","HEME.BIOSYNTHESIS.II","HEMESYN2.PWY","HEXITOLDEGSUPER.PWY","HISDEG.PWY","HISTSYN.PWY","HOMOSER.METSYN.PWY","HSERMETANA.PWY","ILEUSYN.PWY","KDO.NAGLIPASYN.PWY","KETOGLUCONMET.PWY","LACTOSECAT.PWY","LEU.DEG2.PWY","LPSSYN.PWY","MET.SAM.PWY","METH.ACETATE.PWY","METHGLYUT.PWY","METHYLGALLATE.DEGRADATION.PWY","NAD.BIOSYNTHESIS.II","NAGLIPASYN.PWY","NONMEVIPP.PWY","NONOXIPENT.PWY","OANTIGEN.PWY","ORNARGDEG.PWY","ORNDEG.PWY","P105.PWY","P108.PWY","P122.PWY","P124.PWY","P125.PWY","P161.PWY","P162.PWY","P163.PWY","P164.PWY","P221.PWY","P23.PWY","P281.PWY","P341.PWY","P381.PWY","P4.PWY","P42.PWY","P441.PWY","P461.PWY","P562.PWY","PANTO.PWY","PANTOSYN.PWY","PENTOSE.P.PWY","PEPTIDOGLYCANSYN.PWY","PHOSLIPSYN.PWY","POLYAMINSYN3.PWY","POLYAMSYN.PWY","POLYISOPRENSYN.PWY","PPGPPMET.PWY","PROTOCATECHUATE.ORTHO.CLEAVAGE.PWY","PRPP.PWY","PWY.1269","PWY.1361","PWY.1501","PWY.181","PWY.1861","PWY.2941","PWY.2942","PWY.3001","PWY.3661","PWY.3781","PWY.4984","PWY.5005","PWY.5022","PWY.5028","PWY.5097","PWY.5100","PWY.5101","PWY.5103","PWY.5104","PWY.5121","PWY.5154","PWY.5177","PWY.5178","PWY.5180","PWY.5181","PWY.5182","PWY.5188","PWY.5189","PWY.5265","PWY.5304","PWY.5345","PWY.5347","PWY.5384","PWY.5415","PWY.5417","PWY.5419","PWY.5420","PWY.5430","PWY.5484","PWY.5505","PWY.5507","PWY.5509","PWY.5654","PWY.5659","PWY.5667","PWY.5676","PWY.5677","PWY.5686","PWY.5695","PWY.5705","PWY.5747","PWY.5837","PWY.5838","PWY.5840","PWY.5845","PWY.5850","PWY.5855","PWY.5856","PWY.5857","PWY.5860","PWY.5861","PWY.5862","PWY.5863","PWY.5896","PWY.5897","PWY.5898","PWY.5899","PWY.5910","PWY.5913","PWY.5918","PWY.5920","PWY.5971","PWY.5973","PWY.5989","PWY.6071","PWY.6121","PWY.6122","PWY.6123","PWY.6125","PWY.6126","PWY.6143","PWY.6147","PWY.6151","PWY.6163","PWY.6165","PWY.6182","PWY.6185","PWY.621","PWY.6263","PWY.6269","PWY.6277","PWY.6282","PWY.6317","PWY.6353","PWY.6383","PWY.6385","PWY.6386","PWY.6387","PWY.6396","PWY.6397","PWY.6467","PWY.6471","PWY.6507","PWY.6519","PWY.6545","PWY.6562","PWY.6572","PWY.6588","PWY.6590","PWY.6608","PWY.6609","PWY.6612","PWY.6628","PWY.6629","PWY.6630","PWY.6660","PWY.6690","PWY.6700","PWY.6703","PWY.6708","PWY.6728","PWY.6737","PWY.6749","PWY.6876","PWY.6891","PWY.6892","PWY.6895","PWY.6897","PWY.6901","PWY.6906","PWY.6969","PWY.6992","PWY.7003","PWY.7007","PWY.7013","PWY.7031","PWY.7094","PWY.7111","PWY.7184","PWY.7187","PWY.7196","PWY.7197","PWY.7198","PWY.7199","PWY.7200","PWY.7208","PWY.7210","PWY.7211","PWY.7219","PWY.7220","PWY.7221","PWY.7222","PWY.7228","PWY.7229","PWY.7234","PWY.7237","PWY.7242","PWY.7254","PWY.7315","PWY.7323","PWY.7328","PWY.7332","PWY.7371","PWY.7373","PWY.7374","PWY.7376","PWY.7377","PWY.7392","PWY.7400","PWY.7431","PWY.7446","PWY.7456","PWY.7527","PWY.7539","PWY.7560","PWY.7616","PWY.7663","PWY.7664","PWY.841","PWY.922","PWY0.1061","PWY0.1261","PWY0.1277","PWY0.1296","PWY0.1297","PWY0.1298","PWY0.1319","PWY0.1338","PWY0.1415","PWY0.1479","PWY0.1533","PWY0.1586","PWY0.162","PWY0.166","PWY0.321","PWY0.41","PWY0.42","PWY0.781","PWY0.845","PWY0.862","PWY1G.0","PWY490.3","PWY4FS.7","PWY4FS.8","PWYG.321","PYRIDNUCSAL.PWY","PYRIDNUCSYN.PWY","PYRIDOXSYN.PWY","REDCITCYC","RHAMCAT.PWY","RIBOSYN2.PWY","RUMP.PWY","SALVADEHYPOX.PWY","SER.GLYSYN.PWY","SO4ASSIM.PWY","SULFATE.CYS.PWY","TCA","TCA.GLYOX.BYPASS","TEICHOICACID.PWY","THISYN.PWY","THREOCAT.PWY","THRESYN.PWY","TRNA.CHARGING.PWY","TRPSYN.PWY","TYRFUMCAT.PWY","UBISYN.PWY","UDPNAGSYN.PWY","VALSYN.PWY"],[0,0,0.002,0,0,0,0,0,0,0,0,0,0.064,0,0,0,0,0,0,0,0,0,0,0.021,0,0,0,0,0,0,0,0,0,0,0,0,0.094,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.288,0,0,0.025,0.222,0,0,0,0,0,0,0.02,0,0,0,0.71,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.101,0.008,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.447,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.088,0,0.002,0.01,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.559,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.027,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.002,0,0,0,0,0,0.009,0,0,0.559,0.006,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0.579,0.541,0.398,0.297,0.668,0.189,0.539,0.512,0.534,0.05,0.05,0.062,0.534,0.454,0.061,0.094,0.157,0.845,0.096,0.511,0.823,0.748,0.061,0.534,0.062,0.534,0.05,0.534,0.534,0.511,0.511,0.05,0.079,0.534,0.138,0.921,0.577,0.745,0.719,0.079,0.534,0.534,0.728,0.484,0.719,0.305,0.518,0.05,0.336,0.077,0.956,0.58,0.599,0.745,0.601,0.431,0.534,0.547,0.719,0.729,0.041,0.104,0.144,0.446,0.136,0.52,0.534,0.596,0.534,0.534,0.146,0.001,0.69,0.534,0.678,0.061,0.104,0.454,0.06,0.512,0.474,0.984,0.06,0.766,0.54,0.136,0.06,0.429,0.534,0.785,0.826,0.569,0.534,0.698,0.534,0.511,0.05,0.534,0.977,0.823,0.202,0.167,0.05,0.097,0.062,0.542,0.534,0.079,0.511,0.539,0.953,0.065,0.534,0.534,0.305,0.454,0.534,0.143,0.161,0.534,0.534,0.094,0.534,0.997,0.534,0.094,0.094,0.119,0.103,0.086,0.096,0.064,0.351,0.534,0.37,0.534,0.37,0.061,0.05,0.768,0.2,0.823,0.143,0.394,0.534,0.534,0.534,0.534,0.446,0.534,0.096,0.534,0.534,0.534,0.157,0.094,0.097,0.776,0.095,0.157,0.511,0.68,0.094,0.094,0.094,0.161,0.161,0.379,0.379,0.379,0.161,0.094,0.161,0.094,0.161,0.094,0.094,0.094,0.664,0.884,0.633,0.343,0.768,0.405,0.079,0.539,0.094,0.079,0.394,0.05,0.645,0.99,0.446,0.534,0.084,0.581,0.534,0.534,0.305,0.17,0.534,0.079,0.079,0.202,0.064,0.534,0.116,0.109,0.1,0.767,0.534,0.06,0.323,0.006,0.065,0.382,0.536,0.99,0.508,0.815,0.462,0.305,0.116,0.795,0.726,0.795,0.534,0.534,0.179,0.237,0.379,0.426,0.99,0.816,0.534,0.041,0.99,0.162,0.136,0.05,0.534,0.159,0.534,0.843,0.534,0.144,0.99,0.99,0.071,0.069,0.096,0.05,0.064,0.05,0.06,0.051,0.106,0.05,0.99,0.104,0.297,0.218,0.297,0.051,0.99,0.935,0.228,0.05,0.601,0.096,0.064,0.271,0.157,0.109,0.977,0.421,0.534,0.956,0.216,0.05,0.558,0.392,0.451,0.534,0.217,0.104,0.534,0.421,0.079,0.05,0.664,0.534,0.534,0.534,0.159,0.05,0.052,0.094,0.454,0.382,0.094,0.99,0.096,0.05,0.097,0.539,0.478,0.534,0.109,0.062,0.079,0.534,0.224,0.05,0.05,0.079,0.741,0.323,0.06,0.972,0.05,0.921,0.417,0.416,0.18,0.935,0.99,0.541,0.719,0.089,0.151,0.534,0.323,0.094,0.416,0.534,0.382,0.051,0.136],[0.767,0.767,0.59,0.301,0.65,0.348,0.684,0.348,0.992,0.301,0.301,0.348,0.301,0.456,0.441,0.522,0.59,0.008,0.301,0.765,0.765,0.301,0.348,0.869,0.348,0.301,0.743,0.301,0.964,0.35,0.348,0.566,0.547,0.378,0.533,0.939,0.85,0.475,0.814,0.301,0.767,0.767,0.777,0.729,0.814,0.761,0.36,0.301,0.475,0.456,0.82,0.761,0.911,0.903,0.717,0.717,0.765,0.056,0.36,0.923,0.576,0.755,0.301,0.905,0.726,0.35,0.301,0.905,0.301,0.301,0.301,0.379,0.301,0.767,0.982,0.59,0.348,0.737,0.348,0.348,0.348,0.884,0.379,0.982,0.891,0.475,0.301,0.444,0.301,0.923,0.82,0.301,0.301,0.957,0.301,0.056,0.59,0.806,0.814,0.456,0.301,0.301,0.923,0.301,0.301,0.44,0.726,0.767,0.368,0.814,0.058,0.348,0.301,0.301,0.348,0.507,0.354,0.434,0.434,0.301,0.129,0.456,0.301,0.767,0.301,0.348,0.363,0.729,0.553,0.726,0.301,0.598,0.035,0.301,0.742,0.767,0.742,0.576,0.59,0.765,0.346,0.304,0.301,0.869,0.923,0.765,0.923,0.923,0.618,0.729,0.767,0.301,0.758,0.301,0.348,0.301,0.348,0.301,0.301,0.301,0.743,0.301,0.198,0.161,0.161,0.301,0.301,0.981,0.981,0.981,0.301,0.161,0.301,0.198,0.301,0.161,0.161,0.161,0.304,0.923,0.047,0.767,0.301,0.923,0.541,0.767,0.301,0.301,0.301,0.755,0.456,0.99,0.65,0.957,0.379,0.845,0.765,0.765,0.742,0.761,0.761,0.301,0.533,0.453,0.379,0.301,0.299,0.301,0.301,0.765,0.301,0.596,0.447,0.379,0.475,0.301,0.767,0.794,0.914,0.008,0.982,0.205,0.456,0.923,0.301,0.923,0.301,0.765,0.301,0.205,0.981,0.391,0.447,0.639,0.301,0.379,0.4,0.767,0.366,0.661,0.301,0.814,0.301,0.99,0.301,0.346,0.99,0.198,0.444,0.551,0.455,0.726,0.839,0.456,0.521,0.65,0.301,0.454,0.205,0.301,0.982,0.301,0.982,0.761,0.301,0.056,0.891,0.161,0.948,0.799,0.444,0.301,0.304,0.732,0.982,0.765,0.301,0.568,0.36,0.301,0.981,0.574,0.767,0.941,0.508,0.348,0.301,0.444,0.522,0.754,0.304,0.444,0.25,0.767,0.348,0.304,0.348,0.301,0.348,0.056,0.767,0.353,0.66,0.743,0.533,0.767,0.08,0.301,0.085,0.37,0.533,0.301,0.777,0.275,0.275,0.521,0.767,0.992,0.42,0.035,0.332,0.982,0.507,0.989,0.59,0.301,0.301,0.923,0.891,0.935,0.814,0.767,0.301,0.301,0.814,0.301,0.981,0.337,0.726]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGE_GROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ### Focus on the pathways involved in glycans degradation
 
@@ -3738,7 +3624,7 @@ axis.text.y = element_text(colour="black",size=13,angle=0,hjust=1,vjust=0,face="
 p2
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-75-1.png)<!-- -->
+![](fig/glycans%20picrust.png)<!-- -->
 
 <font style="color:blue">Pathway PWY-6507(AMI-/AMI+)</font>
 
@@ -3750,9 +3636,6 @@ mod_1<-update(mod_1, weights=varIdent(form=~1|AGE), method="ML")
 #pGROUP(mod_1, resid(., type = "p") ~ fitted(.), abline = 0)
 datatable(anova(mod_1), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-579c602742f90069daeb" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-579c602742f90069daeb">{"x":{"filter":"none","data":[["(Intercept)","AGE","GROUP","AGE:GROUP"],[1,4,1,4],[71,71,18,71],[1735.21760466142,82.0622733352513,9.78130706851086,2.61485130496482],[0,0,0.00581820983922043,0.0422855822706993]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 a<-emmeans(mod_1, pairwise ~ GROUP | AGE, adjust="bonferroni")
@@ -3794,9 +3677,6 @@ mod_1<-update(mod_1, weights=varIdent(form=~1|AGE), method="ML")
 datatable(anova(mod_1), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-b9c3c78f0cb463960029" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b9c3c78f0cb463960029">{"x":{"filter":"none","data":[["(Intercept)","AGE","GROUP","AGE:GROUP"],[1,4,1,4],[71,71,18,71],[1017.73304764187,45.3095089693713,13.2774215328997,0.195879374583502],[0,0,0.00185700635641839,0.939768411457832]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-emmeans(mod_1, pairwise ~ GROUP | AGE, adjust="bonferroni")
 a$contrasts
@@ -3837,9 +3717,6 @@ mod_1<-update(mod_1, weights=varIdent(form=~1|AGE), method="ML")
 datatable(anova(mod_1), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
 
-<!--html_preserve--><div id="htmlwidget-132f99363c03d39cdf32" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-132f99363c03d39cdf32">{"x":{"filter":"none","data":[["(Intercept)","AGE","GROUP","AGE:GROUP"],[1,4,1,4],[71,71,18,71],[7488.82842005437,60.6658237936393,1.74721092423681,3.09420669960433],[0,0,0.202781642255008,0.0208839748476325]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-emmeans(mod_1, pairwise ~ GROUP | AGE, adjust="bonferroni")
 a$contrasts
@@ -3879,9 +3756,6 @@ mod_1<-update(mod_1, weights=varIdent(form=~1|AGE), method="ML")
 #pGROUP(mod_1, resid(., type = "p") ~ fitted(.), abline = 0)
 datatable(anova(mod_1), colnames=c("DF","denDF","F-val", "P-val nb OTU")) %>% formatRound(columns=c('numDF', 'denDF', 'F-value', 'p-value'), digits=3)
 ```
-
-<!--html_preserve--><div id="htmlwidget-15428f278005b4489abe" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-15428f278005b4489abe">{"x":{"filter":"none","data":[["(Intercept)","AGE","GROUP","AGE:GROUP"],[1,4,1,4],[71,71,18,71],[3579.75829807554,26.2915475652221,12.3686699519411,0.626655211727756],[0,2.16604512104368e-13,0.00246248349749356,0.645040118742603]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>DF<\/th>\n      <th>denDF<\/th>\n      <th>F-val<\/th>\n      <th>P-val nb OTU<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"targets":[1,2,3,4],"render":"function(data, type, row, meta) { return DTWidget.formatRound(data, 3, 3, \",\", \".\"); }"},{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 a<-emmeans(mod_1, pairwise ~ GROUP | AGE, adjust="bonferroni")
@@ -3937,12 +3811,11 @@ axis.text.y = element_text(colour="black",size=13,angle=0,hjust=1,vjust=0,face="
 p3
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-80-1.png)<!-- -->
+![](fig/glutamate%20picrust.png)<!-- -->
 
 # Gene expression
 
 The expression of 48 genes of the caecal mucosa mainly involved in health was analyzed.
-
 
 
 Heatmap representation (grouping by age and experimental treatments)
@@ -3983,7 +3856,7 @@ heatplot(mean2, dualScale = T, scale='row', dend='row', classvec = mean_calc$AGE
 ## [15,] "RFF+.58" "#006600"
 ```
 
-![](ISME_script_files/figure-html/Heatmap-1.png)<!-- -->
+![](fig/Heatmap-1.png)<!-- -->
 
 ## Statistical analysis STA-/STA+
 
@@ -4022,11 +3895,7 @@ rownames(result)=colnames(rnacaecumSTA[1:48])
 datatable(result)
 ```
 
-<!--html_preserve--><div id="htmlwidget-7437976c951172fcaa63" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7437976c951172fcaa63">{"x":{"filter":"none","data":[["ANG","ALPI","CAT","CCL2","CCL20","CD14","CLDN1","CLDN2","CLDN3","DEFB1","FUT2","HCAR2","IL18","IL1B","IL8","KLF4","LGR5","LYZ","MKI67","MUC1","MUC13","MYDD88","NOS2","NOX1","NP4","NRF2","OCLN","PCNA","PTGS2","REG3G","S100A8","SAA","SOD1","TGFB1","TJP1","TJP2","TLR2","TLR4","TLR5","TNFA","TNFSF13","TNFSF13B","VIL1","PIGR","GPX1","GPX2","IL4","MCT1"],[0,0,0.073,0,0.735,0,0,0,0,0,0,1,0.012,0,0,0.148,0,0,0,0,0,0,0,0,0,0.014,0,0,0.003,0,0,0,0.055,0.962,0.331,0,0,0.006,0,0,0,0,0.096,0,0.075,0,0,0],[0.874,0.825,0.891,0.874,0.967,0.874,0.904,0.904,0.904,0.825,0.904,0.999,0.904,0.874,0.904,0.839,0.825,0.85,0.825,0.85,0.825,0.825,0.825,0.825,0.825,0.825,0.967,0.929,0.825,0.825,0.874,0.967,0.825,0.967,0.825,0.874,0.825,0.825,0.891,0.967,0.904,0.089,0.891,0.825,0.874,0.825,0.874,0.825],[0.822,0.535,0.822,0.535,0.916,0.535,0.984,0.597,0.822,0.984,0.984,0.812,0.891,0.822,0.535,0.822,0.535,0.916,0.535,0.597,0.535,0.984,0.822,0.717,0.535,0.535,0.762,0.984,0.822,0.821,0.891,0.822,0.822,0.996,0.697,0.597,0.822,0.535,0.822,0.535,0.916,0.597,0.984,0.984,0.984,0.535,0.717,0.535]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 ## Statistical analysis STA+/RFF+
-
 
 ```r
 rnacaecumEARLY<-subset(rnacaecum, GROUP!="STA-")
@@ -4061,9 +3930,6 @@ rownames(result)=colnames(rnacaecumEARLY[1:48])
 datatable(result)
 ```
 
-<!--html_preserve--><div id="htmlwidget-19bf5f385ce49537f1fb" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-19bf5f385ce49537f1fb">{"x":{"filter":"none","data":[["ANG","ALPI","CAT","CCL2","CCL20","CD14","CLDN1","CLDN2","CLDN3","DEFB1","FUT2","HCAR2","IL18","IL1B","IL8","KLF4","LGR5","LYZ","MKI67","MUC1","MUC13","MYDD88","NOS2","NOX1","NP4","NRF2","OCLN","PCNA","PTGS2","REG3G","S100A8","SAA","SOD1","TGFB1","TJP1","TJP2","TLR2","TLR4","TLR5","TNFA","TNFSF13","TNFSF13B","VIL1","PIGR","GPX1","GPX2","IL4","MCT1"],[0,0,0.002,0,0.007,0.004,0,0,0,0,0,0.075,0.06,0,0,0,0,0,0,0,0,0,0,0,0.007,0.782,0,0,0,0,0,0,0.004,0.361,0.394,0,0,0.394,0,0,0,0,0.653,0,0.361,0,0.001,0],[1,0.968,1,1,1,1,1,1,1,0.968,1,1,1,1,1,1,1,1,1,1,1,1,0.53,1,1,1,1,1,0.968,1,1,1,1,1,0.511,1,1,1,1,1,1,0.056,1,0.34,1,0.263,1,1],[0.826,0.045,0.818,0.852,0.212,0.691,0.826,0.818,0.818,0.852,0.852,0.691,0.826,0.691,0.852,0.818,0.691,0.691,0.691,0.691,0.691,0.857,0.691,0.103,0.691,0.691,0.691,0.818,0.691,0.691,0.818,0.691,0.691,0.691,0.691,0.897,0.826,0.691,0.691,0.826,0.826,0.691,0.852,0.818,0.867,0.691,0.691,0.826]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_GROUP<\/th>\n      <th>padj_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 ## Focus on the genes differentially expressed
 
 __TNFSF13B (comparison STA-/STA+)__
@@ -4076,9 +3942,6 @@ ano<-data.frame(Anova(mod_tnsf13b, type="III"))
 ano[,1:3]<-round(ano[,1:3],3)
 datatable(ano)
 ```
-
-<!--html_preserve--><div id="htmlwidget-bab804a0c9124fd04ad9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bab804a0c9124fd04ad9">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[0.408,8.714,195.981,5.254],[1,1,4,4],[0.523,0.003,0,0.262]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr..Chisq.<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 test<-lsmeans(mod_tnsf13b,pairwise~GROUP|AGE, adjust="tukey")
@@ -4120,9 +3983,6 @@ ano<-data.frame(Anova(mod_tnsf13b, type="III"))
 ano[,1:3]<-round(ano[,1:3],3)
 datatable(ano)
 ```
-
-<!--html_preserve--><div id="htmlwidget-f9a3f3da7cd91d98def1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f9a3f3da7cd91d98def1">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[17.574,9.48,245.228,6.333],[1,1,4,4],[0,0.002,0,0.176]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr..Chisq.<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 test<-lsmeans(mod_tnsf13b,pairwise~GROUP|AGE, adjust="tukey")
@@ -4167,7 +4027,7 @@ ggplot(data=rnacaecum18, aes(x=GROUP, y=TNFSF13B, fill=GROUP)) +  scale_fill_man
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm"))
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-84-2.png)<!-- -->
+![](fig/TNFSF13B.png)<!-- -->
 
 __ALPI (comparison STA+/RFF+)__
 
@@ -4178,9 +4038,6 @@ ano<-data.frame(Anova(mod_ALPI, type="III"))
 ano[,1:3]<-round(ano[,1:3],3)
 datatable(ano)
 ```
-
-<!--html_preserve--><div id="htmlwidget-83c8868e1f19c68f4802" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-83c8868e1f19c68f4802">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[0.113,1.991,24.312,16.647],[1,1,4,4],[0.736,0.158,0,0.002]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr..Chisq.<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 test<-lsmeans(mod_ALPI,pairwise~GROUP|AGE, adjust="tukey")
@@ -4225,7 +4082,7 @@ ggplot(data=rnacaecum30, aes(x=GROUP, y=ALPI, fill=GROUP)) +  scale_fill_manual(
                                            legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm"))
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-85-2.png)<!-- -->
+![](fig/ALPI.png)<!-- -->
 
 # Metabolomics analysis
 
@@ -4242,15 +4099,10 @@ metabo$AGE<-as.factor(as.character(metabo$AGE))
 ```r
 Xtot<-metabo[,c(1:29,31)]
 res.pca = PCA(Xtot, scale.unit=TRUE, ncp=5, graph=T, quali.sup=30) 
-```
-
-![](ISME_script_files/figure-html/unnamed-chunk-86-1.png)<!-- -->![](ISME_script_files/figure-html/unnamed-chunk-86-2.png)<!-- -->
-
-```r
 plot.PCA(res.pca, axes=c(1, 2), choix="ind", habillage=30, label="none")
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-86-3.png)<!-- -->
+![](fig/metabolites%20age%20effect.png)<!-- -->
 
 ## Analysis groups STA-/STA+
 
@@ -4264,9 +4116,6 @@ summary<-metaboSTA%>%dplyr::select(.,butyrate:phenylalanine, GROUP, AGE)%>%dplyr
 summary[,3:89]<-round(summary[,3:89],1)
 datatable(summary)
 ```
-
-<!--html_preserve--><div id="htmlwidget-1e6004890bb4efa8432f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1e6004890bb4efa8432f">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10"],["STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP"],["18","25","30","38","58","18","25","30","38","58"],[2137.8,14039.6,16199,17859,28243.2,3510.1,15056.6,15646.9,17819.1,28070.5],[1186.2,1084.6,702,722.7,1812.3,1645.3,1187.3,645.8,887.2,2006.5],[191,230.8,171.5,224.7,492.1,297,274.3,211.5,325,611.1],[508.1,290.5,131.7,206.2,709,514.8,311.6,126.8,242.2,827.5],[3525.6,5216.4,4081.8,3193.3,2349.7,4346.3,5266,3893,2554.3,2714.1],[49.8,63.1,38.4,41.6,46.6,81.4,85.5,54.5,55.9,65.2],[51,39.6,234.1,136.1,267,98.8,60.1,34.1,47.6,157.5],[741,896.6,680.6,750.8,894.8,811.2,835.1,578,648.6,784.7],[811.7,837.3,936.8,744.2,1132.6,880.8,866.4,796.2,689.1,1196],[1312.8,973.2,761.1,976.7,1778.6,2360.7,988.6,764,1178.5,1686],[455.4,549.6,411.6,536.3,909.6,624.8,550.3,436.8,490.3,962.4],[33831.1,101627.9,111024.2,126815.7,142544.1,55882.3,115853,104518.8,118522,133627.2],[1014.2,1813,1961.1,2062.9,2794.1,1446,1590.7,2002,2481,3274.8],[415.9,325.1,150,143,290.8,558.1,1647.3,172.4,118.7,493.1],[405.8,1377.3,1481.5,1297.5,1930.2,472.5,1293.9,1500.9,1324.9,2024],[59.4,46.1,24.1,28.6,26.5,97.1,51.2,23.2,41.2,34.8],[273.7,335.2,270.8,197.6,159.5,201.9,508.1,318,171,204.5],[2791.5,1662,920.2,1573.2,2750.6,3046.1,1640.4,1097.8,1072.4,2863],[20.7,479.3,315.4,475.8,799.8,17.3,489.9,375.7,370.6,690.8],[1859.2,411.3,228.2,262.4,1125.2,3451,393.8,292.4,345.5,1062.5],[1059.5,3093.5,3572.9,3390,2739.1,993.7,2927.6,2859.4,3721.7,2798],[1124,985.3,641.8,580.7,988.3,1526.6,1006.4,619.7,771.6,1224],[307,1978.8,1746,2217.1,3054.8,406.9,1958.5,1576.5,2757.2,3014],[125.8,74.7,71.8,38.7,44.7,116.6,53.8,44.5,56.3,49.9],[31.3,93.9,78.3,144.5,165.7,64.8,105.3,98,151.7,198.7],[70.8,87.4,73.1,87.8,81.4,74.4,88.4,67.5,100.2,91.3],[140.1,79.1,63,45.4,45.6,134.3,250.1,27.4,45.2,56.7],[241.8,200.9,83,94.7,234.6,299.5,208.5,96.3,102.7,255.3],[108.4,154.2,150.4,138.3,182.4,138.6,174.4,162.1,144.3,207.2],[937.6,3204.9,4399.8,3719.3,4156.5,2137,5189.1,4483.4,3163.8,3515.7],[1369.8,332.4,251.4,244.8,631.1,924.5,707.9,275.2,355.2,609.8],[189.3,104.2,96.9,112.1,138.8,178.1,118.5,94.5,148.1,210.8],[466.5,128,64.6,113.1,279,247.6,223.5,75.1,118.1,264.1],[1520,1823.7,1620.3,835.1,536.4,2083.7,2348.6,1337.5,521,672.6],[41.5,63.1,45.4,58.4,39.7,62.9,62.9,48.9,78.8,32.7],[38,37.7,193.2,217.1,217.6,71.6,67.1,49.4,36.5,123.2],[213.9,399,310.2,312.7,542.3,272.2,184.1,196.5,320,383.7],[384.9,223.7,239.8,164.6,330.3,502.5,216.3,173.6,251.9,270.9],[1497.9,295.8,247.2,273.2,497.5,1794.3,309.4,302.5,695.1,555.1],[384.9,117.6,143.3,140.2,166.8,242.8,259.1,151.2,144.8,133],[15447,22304.1,34524.3,29319,14115.1,31078,32751.6,36753.4,40799.5,16172.2],[397.5,417.8,459.8,672.4,776.6,467.6,408.1,598.7,701.2,726.5],[263.1,165.3,56.1,84.1,241.6,399.5,4224.8,67.9,45.1,393.7],[143.2,558.5,401.5,356.6,438.3,269.1,585.1,501.7,417.5,546.8],[46.5,25.7,16.4,15,16.9,57.3,40.8,19.9,19.1,15.6],[187.9,108.7,68.5,48.1,46.3,80.9,314.3,117.8,34.8,67.4],[1300.2,824.2,440.5,930,753.3,1696.2,1016.8,407.1,415.2,1251.6],[18.5,206.9,172.9,168,115,22.3,314.1,184.4,118.5,123.5],[1123.8,153.5,98.7,126.5,685.5,3861.7,269.1,98.4,236.5,512.1],[490,925.8,2136.2,1852.7,613.3,376.1,1568.1,1594.4,1981.2,828.2],[682.3,250.6,142.2,189.9,430.1,323.8,295.9,141.2,397.3,404],[91.6,570,864.1,486.6,880.3,210,615.7,265.2,1163.6,716],[93.3,31.7,54.2,23.8,13.6,139.9,38.5,22.7,52.5,21.2],[20.9,20.2,43.2,68.4,32.8,39.1,42.4,39.9,36.8,37.9],[36.3,16.5,19,16.4,25.1,36.5,45,16.2,30.1,38.9],[98.6,39.5,109.8,30.2,16,136,411.8,18.2,37.7,47.5],[217.4,48.1,25,16.5,64.5,136,90.6,37.4,33.7,52.3],[90.3,25,29.2,25.3,44.9,43.1,46.7,29.8,25.7,38.1],[296.5,1013.5,1391.3,1176.1,1314.4,675.8,1640.9,1417.8,1000.5,1111.7],[433.2,105.1,79.5,77.4,199.6,292.4,223.9,87,112.3,192.8],[59.9,33,30.6,35.4,43.9,56.3,37.5,29.9,46.8,66.7],[147.5,40.5,20.4,35.8,88.2,78.3,70.7,23.8,37.3,83.5],[480.7,576.7,512.4,264.1,169.6,658.9,742.7,422.9,164.8,212.7],[13.1,19.9,14.4,18.5,12.6,19.9,19.9,15.5,24.9,10.3],[12,11.9,61.1,68.7,68.8,22.7,21.2,15.6,11.6,39],[67.6,126.2,98.1,98.9,171.5,86.1,58.2,62.1,101.2,121.3],[121.7,70.7,75.8,52.1,104.4,158.9,68.4,54.9,79.7,85.7],[473.7,93.5,78.2,86.4,157.3,567.4,97.8,95.6,219.8,175.5],[121.7,37.2,45.3,44.3,52.7,76.8,81.9,47.8,45.8,42.1],[4884.8,7053.2,10917.6,9271.5,4463.6,9827.7,10357,11622.4,12901.9,5114.1],[125.7,132.1,145.4,212.6,245.6,147.9,129.1,189.3,221.7,229.7],[83.2,52.3,17.7,26.6,76.4,126.3,1336,21.5,14.2,124.5],[45.3,176.6,127,112.8,138.6,85.1,185,158.7,132,172.9],[14.7,8.1,5.2,4.8,5.3,18.1,12.9,6.3,6,4.9],[59.4,34.4,21.7,15.2,14.7,25.6,99.4,37.3,11,21.3],[411.2,260.6,139.3,294.1,238.2,536.4,321.5,128.7,131.3,395.8],[5.9,65.4,54.7,53.1,36.4,7.1,99.3,58.3,37.5,39.1],[355.4,48.6,31.2,40,216.8,1221.2,85.1,31.1,74.8,162],[154.9,292.8,675.5,585.9,194,118.9,495.9,504.2,626.5,261.9],[215.7,79.3,45,60,136,102.4,93.6,44.7,125.6,127.8],[29,180.3,273.2,153.9,278.4,66.4,194.7,83.9,368,226.4],[29.5,10,17.1,7.5,4.3,44.2,12.2,7.2,16.6,6.7],[6.6,6.4,13.7,21.6,10.4,12.4,13.4,12.6,11.7,12],[11.5,5.2,6,5.2,7.9,11.5,14.2,5.1,9.5,12.3],[31.2,12.5,34.7,9.6,5.1,43,130.2,5.7,11.9,15],[68.7,15.2,7.9,5.2,20.4,43,28.6,11.8,10.6,16.5],[28.5,7.9,9.2,8,14.2,13.6,14.8,9.4,8.1,12]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>GROUP<\/th>\n      <th>AGE<\/th>\n      <th>butyrate_mean<\/th>\n      <th>leucine_mean<\/th>\n      <th>valine_mean<\/th>\n      <th>isoleucine_mean<\/th>\n      <th>propionate_mean<\/th>\n      <th>X3_methyl_2_oxovalerate_mean<\/th>\n      <th>X3_methyl_2_oxobutyrate_mean<\/th>\n      <th>ethanol_mean<\/th>\n      <th>valerate_mean<\/th>\n      <th>threonine_mean<\/th>\n      <th>lysine_mean<\/th>\n      <th>acetate_mean<\/th>\n      <th>glutamate_mean<\/th>\n      <th>succinate_mean<\/th>\n      <th>methylamine_mean<\/th>\n      <th>X4_methyl_2_oxovalerate_mean<\/th>\n      <th>dimethylamine_mean<\/th>\n      <th>trimethylamine_mean<\/th>\n      <th>X3_phenylpropionate_mean<\/th>\n      <th>choline_mean<\/th>\n      <th>methanol_mean<\/th>\n      <th>glycine_mean<\/th>\n      <th>glucose_mean<\/th>\n      <th>galactose_mean<\/th>\n      <th>ribose_mean<\/th>\n      <th>uracil_mean<\/th>\n      <th>X3_3_hydroxyphenylpropionate_mean<\/th>\n      <th>tyrosine_mean<\/th>\n      <th>phenylalanine_mean<\/th>\n      <th>butyrate_sd<\/th>\n      <th>leucine_sd<\/th>\n      <th>valine_sd<\/th>\n      <th>isoleucine_sd<\/th>\n      <th>propionate_sd<\/th>\n      <th>X3_methyl_2_oxovalerate_sd<\/th>\n      <th>X3_methyl_2_oxobutyrate_sd<\/th>\n      <th>ethanol_sd<\/th>\n      <th>valerate_sd<\/th>\n      <th>threonine_sd<\/th>\n      <th>lysine_sd<\/th>\n      <th>acetate_sd<\/th>\n      <th>glutamate_sd<\/th>\n      <th>succinate_sd<\/th>\n      <th>methylamine_sd<\/th>\n      <th>X4_methyl_2_oxovalerate_sd<\/th>\n      <th>dimethylamine_sd<\/th>\n      <th>trimethylamine_sd<\/th>\n      <th>X3_phenylpropionate_sd<\/th>\n      <th>choline_sd<\/th>\n      <th>methanol_sd<\/th>\n      <th>glycine_sd<\/th>\n      <th>glucose_sd<\/th>\n      <th>galactose_sd<\/th>\n      <th>ribose_sd<\/th>\n      <th>uracil_sd<\/th>\n      <th>X3_3_hydroxyphenylpropionate_sd<\/th>\n      <th>tyrosine_sd<\/th>\n      <th>phenylalanine_sd<\/th>\n      <th>butyrate_se<\/th>\n      <th>leucine_se<\/th>\n      <th>valine_se<\/th>\n      <th>isoleucine_se<\/th>\n      <th>propionate_se<\/th>\n      <th>X3_methyl_2_oxovalerate_se<\/th>\n      <th>X3_methyl_2_oxobutyrate_se<\/th>\n      <th>ethanol_se<\/th>\n      <th>valerate_se<\/th>\n      <th>threonine_se<\/th>\n      <th>lysine_se<\/th>\n      <th>acetate_se<\/th>\n      <th>glutamate_se<\/th>\n      <th>succinate_se<\/th>\n      <th>methylamine_se<\/th>\n      <th>X4_methyl_2_oxovalerate_se<\/th>\n      <th>dimethylamine_se<\/th>\n      <th>trimethylamine_se<\/th>\n      <th>X3_phenylpropionate_se<\/th>\n      <th>choline_se<\/th>\n      <th>methanol_se<\/th>\n      <th>glycine_se<\/th>\n      <th>glucose_se<\/th>\n      <th>galactose_se<\/th>\n      <th>ribose_se<\/th>\n      <th>uracil_se<\/th>\n      <th>X3_3_hydroxyphenylpropionate_se<\/th>\n      <th>tyrosine_se<\/th>\n      <th>phenylalanine_se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 __Linear mixed model loop__
 
@@ -4302,9 +4151,6 @@ colnames(result)=c('padj_AGE', 'padj_LOT','padj_AGExGROUP')
 datatable(result)
 ```
 
-<!--html_preserve--><div id="htmlwidget-6b4c6dccde3a977afd0b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6b4c6dccde3a977afd0b">{"x":{"filter":"none","data":[["butyrate","leucine","valine","isoleucine","propionate","X3_methyl_2_oxovalerate","X3_methyl_2_oxobutyrate","ethanol","valerate","threonine","lysine","acetate","glutamate","succinate","methylamine","X4_methyl_2_oxovalerate","dimethylamine","trimethylamine","X3_phenylpropionate","choline","methanol","glycine","glucose","galactose","ribose","uracil","X3_3_hydroxyphenylpropionate","tyrosine","phenylalanine"],[0,0,0,0,0,0.325,0,0.512,0.043,0,0,0,0,0.006,0,0.15,0.001,0,0,0,0,0,0,0,0,0.17,0,0,0],[0.007,0.044,0.044,0.569,0.237,0.438,0.247,0.745,0.995,0.006,0.033,0.007,0.033,0.697,0.667,0.237,0.723,0.847,0.172,0.143,0.9,0.033,0.237,0.324,0.091,0.754,0.697,0.095,0.007],[0.231,0.585,0.901,0.901,0.76,0.901,0,0.901,0.901,0.207,0.395,0.207,0.395,0.901,0.954,0.901,0.722,0.901,0.901,0.9,0.901,0.454,0.901,0.652,0.901,0.901,0.9,0.901,0.585]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_LOT<\/th>\n      <th>padj_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 __ANOVA for the metabolites affected by the timing of solid food introduction__
 
 *Acetate*
@@ -4317,9 +4163,6 @@ mod_acetate<-lmerTest::lmer(log10(acetate) ~ GROUP*AGE + (1|LITTER), data =metab
 ano<-Anova(mod_acetate, type="III")
 datatable(round(ano,3))
 ```
-
-<!--html_preserve--><div id="htmlwidget-2c4d75537239f6b15d41" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2c4d75537239f6b15d41">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[116932.929,1.189,185.793,10.36],[1,1,4,4],[0,0.276,0,0.035]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 a<-lsmeans(mod_acetate,pairwise~GROUP|AGE)
@@ -4361,9 +4204,6 @@ ano<-Anova(mod_butyrate, type="III")
 datatable(round(ano,3))
 ```
 
-<!--html_preserve--><div id="htmlwidget-417f59549a605791a81c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-417f59549a605791a81c">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[74215.298,1.759,778.476,9.517],[1,1,4,4],[0,0.185,0,0.049]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-lsmeans(mod_butyrate,pairwise~GROUP|AGE)
 a$contrasts
@@ -4403,9 +4243,6 @@ mod_threonine<-lmerTest::lmer(log10(threonine) ~ GROUP*AGE + (1|LITTER), data =m
 ano<-Anova(mod_threonine, type="III")
 datatable(round(ano,3))
 ```
-
-<!--html_preserve--><div id="htmlwidget-3d78db257ba19fe1fc41" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3d78db257ba19fe1fc41">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[13951.518,1.902,36.797,10.906],[1,1,4,4],[0,0.168,0,0.028]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 a<-lsmeans(mod_threonine,pairwise~GROUP|AGE)
@@ -4447,9 +4284,6 @@ ano<-Anova(mod_Phenylalanine, type="III")
 datatable(round(ano,3))
 ```
 
-<!--html_preserve--><div id="htmlwidget-c6d6595583b9bbae537c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c6d6595583b9bbae537c">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[20517.719,4.821,46.161,5.682],[1,1,4,4],[0,0.028,0,0.224]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-lsmeans(mod_Phenylalanine,pairwise~GROUP|AGE)
 a$contrasts
@@ -4489,9 +4323,6 @@ mod_Lysine<-lmerTest::lmer(log10(lysine) ~ GROUP*AGE + (1|LITTER), data =metaboS
 ano<-Anova(mod_Lysine, type="III")
 datatable(round(ano,3))
 ```
-
-<!--html_preserve--><div id="htmlwidget-b6bb86a11eeea879a05b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b6bb86a11eeea879a05b">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[16888.282,0.58,63.366,7.46],[1,1,4,4],[0,0.446,0,0.113]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 a<-lsmeans(mod_Lysine,pairwise~GROUP|AGE)
@@ -4533,9 +4364,6 @@ ano<-Anova(mod_Glutamate, type="III")
 datatable(round(ano,3))
 ```
 
-<!--html_preserve--><div id="htmlwidget-4219a03434dffb6df0a8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4219a03434dffb6df0a8">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[60103.207,3.766,103.47,7.592],[1,1,4,4],[0,0.052,0,0.108]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-lsmeans(mod_Glutamate,pairwise~GROUP|AGE)
 a$contrasts
@@ -4575,9 +4403,6 @@ mod_glycine<-lmerTest::lmer(log10(glycine) ~ GROUP*AGE + (1|LITTER), data =metab
 ano<-Anova(mod_glycine, type="III")
 datatable(round(ano,3))
 ```
-
-<!--html_preserve--><div id="htmlwidget-505a9b94658755796aef" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-505a9b94658755796aef">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[22082.003,3.671,79.737,6.793],[1,1,4,4],[0,0.055,0,0.147]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 a<-lsmeans(mod_glycine,pairwise~GROUP|AGE)
@@ -4619,9 +4444,6 @@ ano<-Anova(mod_Leucine, type="III")
 datatable(round(ano,3))
 ```
 
-<!--html_preserve--><div id="htmlwidget-f3f58d3ff7c90a00a373" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f3f58d3ff7c90a00a373">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[12390.819,1.15,66.397,5.704],[1,1,4,4],[0,0.283,0,0.222]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 ```r
 a<-lsmeans(mod_Leucine,pairwise~GROUP|AGE)
 a$contrasts
@@ -4662,8 +4484,6 @@ ano<-Anova(mod_valine, type="III")
 datatable(round(ano,3))
 ```
 
-<!--html_preserve--><div id="htmlwidget-56e8b316a8b73bf6f6b5" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-56e8b316a8b73bf6f6b5">{"x":{"filter":"none","data":[["(Intercept)","GROUP","AGE","GROUP:AGE"],[8165.54,5.885,69.073,2.074],[1,1,4,4],[0,0.015,0,0.722]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Chisq<\/th>\n      <th>Df<\/th>\n      <th>Pr(&gt;Chisq)<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ```r
 a<-lsmeans(mod_valine,pairwise~GROUP|AGE)
@@ -4707,10 +4527,6 @@ summary[,3:89]<-round(summary[,3:89],1)
 datatable(summary)
 ```
 
-<!--html_preserve--><div id="htmlwidget-d348ac6cbb2b58aa4cae" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d348ac6cbb2b58aa4cae">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10"],["RFFP","RFFP","RFFP","RFFP","RFFP","STAP","STAP","STAP","STAP","STAP"],["18","25","30","38","58","18","25","30","38","58"],[4027.5,20641.4,21963.5,16745.7,26885.9,3510.1,15056.6,15646.9,17819.1,28070.5],[963.4,1117.7,725.3,952.6,1388.4,1645.3,1187.3,645.8,887.2,2006.5],[163.4,247.6,194.4,243.7,383.8,297,274.3,211.5,325,611.1],[328.4,319.9,165.8,271.6,506.1,514.8,311.6,126.8,242.2,827.5],[5694.6,5340.1,4149.3,2819.3,3493.7,4346.3,5266,3893,2554.3,2714.1],[78.1,81.7,74.8,56.7,46.9,81.4,85.5,54.5,55.9,65.2],[95.9,66.4,79.7,63.2,62.3,98.8,60.1,34.1,47.6,157.5],[722.7,823.4,626.4,582.3,553,811.2,835.1,578,648.6,784.7],[792.7,1036.7,1209.8,834.7,1070.8,880.8,866.4,796.2,689.1,1196],[1490.1,1056.4,1303.5,1171.9,1518.8,2360.7,988.6,764,1178.5,1686],[456.5,583.4,565,557.4,782.6,624.8,550.3,436.8,490.3,962.4],[56315,139305.3,141196.6,127608.4,162233.9,55882.3,115853,104518.8,118522,133627.2],[1302.6,1627,1727.8,1847.2,1904.4,1446,1590.7,2002,2481,3274.8],[503.2,264.6,776.3,110,122,558.1,1647.3,172.4,118.7,493.1],[605.5,1567.9,1770.4,1180.7,1549.7,472.5,1293.9,1500.9,1324.9,2024],[97.6,40.9,26.8,45.4,20.9,97.1,51.2,23.2,41.2,34.8],[200.5,354.2,339.7,206.4,162.2,201.9,508.1,318,171,204.5],[2551.7,997.8,1245.4,836.8,1804.8,3046.1,1640.4,1097.8,1072.4,2863],[18.2,335.3,389.9,305.5,579,17.3,489.9,375.7,370.6,690.8],[1880.6,355.2,396.7,416.2,668.7,3451,393.8,292.4,345.5,1062.5],[1658.1,5365.2,4278.3,3705.3,5609.7,993.7,2927.6,2859.4,3721.7,2798],[1068,975.8,647.1,691.4,765,1526.6,1006.4,619.7,771.6,1224],[337,1524.7,1431.4,1753.4,1874.5,406.9,1958.5,1576.5,2757.2,3014],[65.4,135.6,84.6,114.1,84.7,116.6,53.8,44.5,56.3,49.9],[55,95.6,74.1,116,127.3,64.8,105.3,98,151.7,198.7],[65.1,92.3,78.5,88.5,53.9,74.4,88.4,67.5,100.2,91.3],[241.9,66.8,38.6,34.6,45.9,134.3,250.1,27.4,45.2,56.7],[233.5,204.7,133.3,121.6,210.9,299.5,208.5,96.3,102.7,255.3],[93.7,158.9,140.8,129,144.9,138.6,174.4,162.1,144.3,207.2],[2088.1,9818.6,5780.9,4177.2,4562.8,2137,5189.1,4483.4,3163.8,3515.7],[540.8,614.7,323.8,392,404.7,924.5,707.9,275.2,355.2,609.8],[93.8,64.4,52.2,92.6,78.8,178.1,118.5,94.5,148.1,210.8],[143.7,191.5,100.9,160.5,156.4,247.6,223.5,75.1,118.1,264.1],[2961.2,2199.3,1132.8,547.7,783,2083.7,2348.6,1337.5,521,672.6],[75.4,65.1,71.4,44.3,48.3,62.9,62.9,48.9,78.8,32.7],[69.6,33.9,57.3,60.9,35.1,71.6,67.1,49.4,36.5,123.2],[167.4,252.8,237.9,112,237.3,272.2,184.1,196.5,320,383.7],[210.6,308.4,284,225.3,137.9,502.5,216.3,173.6,251.9,270.9],[909.9,370.3,677.7,298.8,534.1,1794.3,309.4,302.5,695.1,555.1],[189.5,163.6,279,108.5,131.2,242.8,259.1,151.2,144.8,133],[20543.6,37568.4,34145.1,25743.3,17741.2,31078,32751.6,36753.4,40799.5,16172.2],[541.1,480.5,546.8,309.9,435.5,467.6,408.1,598.7,701.2,726.5],[276,134.5,1982.3,62.8,67.4,399.5,4224.8,67.9,45.1,393.7],[376.3,537.4,636.1,337.7,492.9,269.1,585.1,501.7,417.5,546.8],[86.7,23.4,26.1,38.1,13.3,57.3,40.8,19.9,19.1,15.6],[34.3,60.3,85.2,67.8,36.1,80.9,314.3,117.8,34.8,67.4],[1252.6,656.9,870.4,301.1,640,1696.2,1016.8,407.1,415.2,1251.6],[13.1,131.7,168.6,107.3,151.7,22.3,314.1,184.4,118.5,123.5],[792.1,141.5,203.5,147.1,253.5,3861.7,269.1,98.4,236.5,512.1],[1045.1,3174.4,1412.9,1151.9,3142.8,376.1,1568.1,1594.4,1981.2,828.2],[347.9,326.8,190.4,414.5,230.4,323.8,295.9,141.2,397.3,404],[121.4,321.8,423.9,314.2,445.2,210,615.7,265.2,1163.6,716],[40.6,88,40.5,105.1,28.5,139.9,38.5,22.7,52.5,21.2],[22.7,22.9,18,36.5,30.4,39.1,42.4,39.9,36.8,37.9],[35.9,25.1,32.8,27.5,11.8,36.5,45,16.2,30.1,38.9],[106.8,17.3,33.9,12.7,19.4,136,411.8,18.2,37.7,47.5],[94.9,78.9,54.5,45.1,55.6,136,90.6,37.4,33.7,52.3],[48.4,47,41.3,35.5,28.8,43.1,46.7,29.8,25.7,38.1],[660.3,3104.9,1828.1,1320.9,1442.9,675.8,1640.9,1417.8,1000.5,1111.7],[171,194.4,102.4,124,128,292.4,223.9,87,112.3,192.8],[29.7,20.4,16.5,29.3,24.9,56.3,37.5,29.9,46.8,66.7],[45.4,60.6,31.9,50.8,49.5,78.3,70.7,23.8,37.3,83.5],[936.4,695.5,358.2,173.2,247.6,658.9,742.7,422.9,164.8,212.7],[23.8,20.6,22.6,14,15.3,19.9,19.9,15.5,24.9,10.3],[22,10.7,18.1,19.3,11.1,22.7,21.2,15.6,11.6,39],[52.9,79.9,75.2,35.4,75,86.1,58.2,62.1,101.2,121.3],[66.6,97.5,89.8,71.3,43.6,158.9,68.4,54.9,79.7,85.7],[287.7,117.1,214.3,94.5,168.9,567.4,97.8,95.6,219.8,175.5],[59.9,51.7,88.2,34.3,41.5,76.8,81.9,47.8,45.8,42.1],[6496.5,11880.2,10797.6,8140.7,5610.3,9827.7,10357,11622.4,12901.9,5114.1],[171.1,151.9,172.9,98,137.7,147.9,129.1,189.3,221.7,229.7],[87.3,42.5,626.9,19.9,21.3,126.3,1336,21.5,14.2,124.5],[119,170,201.2,106.8,155.9,85.1,185,158.7,132,172.9],[27.4,7.4,8.3,12.1,4.2,18.1,12.9,6.3,6,4.9],[10.8,19.1,26.9,21.4,11.4,25.6,99.4,37.3,11,21.3],[396.1,207.7,275.2,95.2,202.4,536.4,321.5,128.7,131.3,395.8],[4.2,41.7,53.3,33.9,48,7.1,99.3,58.3,37.5,39.1],[250.5,44.7,64.3,46.5,80.1,1221.2,85.1,31.1,74.8,162],[330.5,1003.8,446.8,364.3,993.8,118.9,495.9,504.2,626.5,261.9],[110,103.3,60.2,131.1,72.9,102.4,93.6,44.7,125.6,127.8],[38.4,101.8,134,99.4,140.8,66.4,194.7,83.9,368,226.4],[12.9,27.8,12.8,33.2,9,44.2,12.2,7.2,16.6,6.7],[7.2,7.3,5.7,11.5,9.6,12.4,13.4,12.6,11.7,12],[11.4,7.9,10.4,8.7,3.7,11.5,14.2,5.1,9.5,12.3],[33.8,5.5,10.7,4,6.1,43,130.2,5.7,11.9,15],[30,25,17.2,14.2,17.6,43,28.6,11.8,10.6,16.5],[15.3,14.9,13.1,11.2,9.1,13.6,14.8,9.4,8.1,12]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>GROUP<\/th>\n      <th>AGE<\/th>\n      <th>butyrate_mean<\/th>\n      <th>leucine_mean<\/th>\n      <th>valine_mean<\/th>\n      <th>isoleucine_mean<\/th>\n      <th>propionate_mean<\/th>\n      <th>X3_methyl_2_oxovalerate_mean<\/th>\n      <th>X3_methyl_2_oxobutyrate_mean<\/th>\n      <th>ethanol_mean<\/th>\n      <th>valerate_mean<\/th>\n      <th>threonine_mean<\/th>\n      <th>lysine_mean<\/th>\n      <th>acetate_mean<\/th>\n      <th>glutamate_mean<\/th>\n      <th>succinate_mean<\/th>\n      <th>methylamine_mean<\/th>\n      <th>X4_methyl_2_oxovalerate_mean<\/th>\n      <th>dimethylamine_mean<\/th>\n      <th>trimethylamine_mean<\/th>\n      <th>X3_phenylpropionate_mean<\/th>\n      <th>choline_mean<\/th>\n      <th>methanol_mean<\/th>\n      <th>glycine_mean<\/th>\n      <th>glucose_mean<\/th>\n      <th>galactose_mean<\/th>\n      <th>ribose_mean<\/th>\n      <th>uracil_mean<\/th>\n      <th>X3_3_hydroxyphenylpropionate_mean<\/th>\n      <th>tyrosine_mean<\/th>\n      <th>phenylalanine_mean<\/th>\n      <th>butyrate_sd<\/th>\n      <th>leucine_sd<\/th>\n      <th>valine_sd<\/th>\n      <th>isoleucine_sd<\/th>\n      <th>propionate_sd<\/th>\n      <th>X3_methyl_2_oxovalerate_sd<\/th>\n      <th>X3_methyl_2_oxobutyrate_sd<\/th>\n      <th>ethanol_sd<\/th>\n      <th>valerate_sd<\/th>\n      <th>threonine_sd<\/th>\n      <th>lysine_sd<\/th>\n      <th>acetate_sd<\/th>\n      <th>glutamate_sd<\/th>\n      <th>succinate_sd<\/th>\n      <th>methylamine_sd<\/th>\n      <th>X4_methyl_2_oxovalerate_sd<\/th>\n      <th>dimethylamine_sd<\/th>\n      <th>trimethylamine_sd<\/th>\n      <th>X3_phenylpropionate_sd<\/th>\n      <th>choline_sd<\/th>\n      <th>methanol_sd<\/th>\n      <th>glycine_sd<\/th>\n      <th>glucose_sd<\/th>\n      <th>galactose_sd<\/th>\n      <th>ribose_sd<\/th>\n      <th>uracil_sd<\/th>\n      <th>X3_3_hydroxyphenylpropionate_sd<\/th>\n      <th>tyrosine_sd<\/th>\n      <th>phenylalanine_sd<\/th>\n      <th>butyrate_se<\/th>\n      <th>leucine_se<\/th>\n      <th>valine_se<\/th>\n      <th>isoleucine_se<\/th>\n      <th>propionate_se<\/th>\n      <th>X3_methyl_2_oxovalerate_se<\/th>\n      <th>X3_methyl_2_oxobutyrate_se<\/th>\n      <th>ethanol_se<\/th>\n      <th>valerate_se<\/th>\n      <th>threonine_se<\/th>\n      <th>lysine_se<\/th>\n      <th>acetate_se<\/th>\n      <th>glutamate_se<\/th>\n      <th>succinate_se<\/th>\n      <th>methylamine_se<\/th>\n      <th>X4_methyl_2_oxovalerate_se<\/th>\n      <th>dimethylamine_se<\/th>\n      <th>trimethylamine_se<\/th>\n      <th>X3_phenylpropionate_se<\/th>\n      <th>choline_se<\/th>\n      <th>methanol_se<\/th>\n      <th>glycine_se<\/th>\n      <th>glucose_se<\/th>\n      <th>galactose_se<\/th>\n      <th>ribose_se<\/th>\n      <th>uracil_se<\/th>\n      <th>X3_3_hydroxyphenylpropionate_se<\/th>\n      <th>tyrosine_se<\/th>\n      <th>phenylalanine_se<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
-
 __Linear mixed model loop__
 
 ```r
@@ -4744,13 +4560,11 @@ colnames(result)=c('padj_AGE', 'padj_LOT','padj_AGExGROUP')
 datatable(result)
 ```
 
-<!--html_preserve--><div id="htmlwidget-5b60b71d458d77b132c3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5b60b71d458d77b132c3">{"x":{"filter":"none","data":[["butyrate","leucine","valine","isoleucine","propionate","X3_methyl_2_oxovalerate","X3_methyl_2_oxobutyrate","ethanol","valerate","threonine","lysine","acetate","glutamate","succinate","methylamine","X4_methyl_2_oxovalerate","dimethylamine","trimethylamine","X3_phenylpropionate","choline","methanol","glycine","glucose","galactose","ribose","uracil","X3_3_hydroxyphenylpropionate","tyrosine","phenylalanine"],[0,0,0,0,0,0.825,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.79,0,0.003,0,0,0],[0.178,0.349,0.024,0.714,0.248,0.768,0.536,0.365,0.159,0.92,0.977,0.047,0.002,0.177,0.785,0.429,0.785,0.134,0.836,0.785,0,0.029,0,0,0.216,0.258,0.768,0.977,0.001],[0.35,0.166,0.227,0.227,0.746,0.925,0.069,0.353,0.169,0.069,0.15,0.746,0.15,0.15,0.332,0.583,0.227,0.637,0.767,0.15,0.406,0.15,0.332,0.081,0.422,0.15,0.081,0.185,0.227]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>padj_AGE<\/th>\n      <th>padj_LOT<\/th>\n      <th>padj_AGExGROUP<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
-
 __ANOVA for the metabolites affected by the polysaccharides composition__
 
 ## Graphs metabolites of interest
 
+Acetate
 
 ```r
 acetate_data<-metabo %>% select("acetate", "AGE", "GROUP")
@@ -4768,8 +4582,9 @@ axis.text.y = element_text(colour="black",size=13,angle=0,hjust=1,vjust=0,face="
 p_acetate
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-100-1.png)<!-- -->
+![](acetate.png)<!-- -->
 
+Propioante and butyrate 
 
 ```r
 C3C4_data<-metabo %>% select("butyrate", "propionate", "AGE", "GROUP")
@@ -4789,8 +4604,9 @@ axis.text.y = element_text(colour="black",size=13,angle=0,hjust=1,vjust=0,face="
 p2
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-101-1.png)<!-- -->
+![](fig/C3C4.png)<!-- -->
 
+Amino acids
 
 ```r
 aa<-metabo %>% select("glycine", "leucine", "lysine", "valine", "threonine", "phenylalanine", "glutamate", "AGE", "GROUP")
@@ -4810,5 +4626,5 @@ axis.text.y = element_text(colour="black",size=13,angle=0,hjust=1,vjust=0,face="
 p_aa
 ```
 
-![](ISME_script_files/figure-html/unnamed-chunk-102-1.png)<!-- -->
+![](fig/amino%20acids.png)<!-- -->
 
