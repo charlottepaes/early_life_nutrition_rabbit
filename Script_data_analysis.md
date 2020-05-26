@@ -54,7 +54,7 @@ milk<-milk[milk[,8]>0,]
 boxplot(MILK_CONSUMED_RABBIT~AGE, data=milk, main="Original data")
 ```
 
-![](ISME_script_files/figure-html/cleaning data-1.png)<!-- -->
+![](fig/cleaning%20data-1.png)<!-- -->
 
 ```r
 SEmilk<-summarySE(milk, measurevar="MILK_CONSUMED_RABBIT", groupvars=c("AGE"), na.rm=TRUE)
@@ -107,7 +107,7 @@ milk$MILK_CONSUMED_RABBIT<-as.numeric(as.character(milk$MILK_CONSUMED_RABBIT))
 boxplot(MILK_CONSUMED_RABBIT~AGE, data=milk, main="Cleaned data")
 ```
 
-![](ISME_script_files/figure-html/cleaning data-2.png)<!-- -->
+![](fig/cleaning%20data-2.png)<!-- -->
 
 #### Statistics
 
@@ -135,9 +135,6 @@ milk$AGE<-as.factor(milk$AGE)
 synth_milk<-summary(MILK_CONSUMED_RABBIT~AGE*GROUP, method="cross", fun=smean.sd, data=milk)
 datatable(synth_milk)
 ```
-
-<!--html_preserve--><div id="htmlwidget-58fae9438b2a922a59ee" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-58fae9438b2a922a59ee">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28"],["3","7","10","14","17","21","ALL","3","7","10","14","17","21","ALL","3","7","10","14","17","21","ALL","3","7","10","14","17","21","ALL"],["RFFP","RFFP","RFFP","RFFP","RFFP","RFFP","RFFP","STAN","STAN","STAN","STAN","STAN","STAN","STAN","STAP","STAP","STAP","STAP","STAP","STAP","STAP","ALL","ALL","ALL","ALL","ALL","ALL","ALL"],[[14.24375,5.63867227279614],[25.7881333333333,3.57107398544525],[30.0518666666667,2.92849219776679],[27.2516666666667,5.35033766179651],[31.3716666666667,4.99998988094214],[47.2106666666667,8.8705123564914],[27.1721219512195,9.57170580846015],[14.25625,5.20640230869648],[25.975,7.04108478858194],[30.09775,4.29065702039521],[26.7511875,5.83342802839805],[34.4440666666667,5.44600045205741],[44.4325714285714,4.6334129558078],[27.7058470588235,9.82959172177597],[15.21875,6.13929624088408],[24.375,5.21504234562546],[29.8148,5.12042686836612],[23.07775,6.59445468556726],[33.7785,4.05980470794676],[43.0842857142857,2.27156970061715],[26.6513023255814,9.39494160526544],[14.5729166666667,5.57138355494504],[25.3575434782609,5.38415038466927],[29.9905217391304,4.12034891046394],[25.6603829787234,6.1277019401673],[33.2106956521739,4.92422716720126],[44.7941,5.66438158374908],[27.1743992094862,9.57162508607666]],[16,15,15,15,15,6,82,16,15,16,16,15,7,85,16,16,15,16,16,7,86,48,46,46,47,46,20,253],[0,0,0,0,0,9,9,0,0,0,0,0,9,9,0,0,1,0,0,9,10,0,0,1,0,0,27,28]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>AGE<\/th>\n      <th>GROUP<\/th>\n      <th>S<\/th>\n      <th>N<\/th>\n      <th>Missing<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 
 ## Gel consumption
 
