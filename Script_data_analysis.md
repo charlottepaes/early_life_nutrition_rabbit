@@ -666,7 +666,7 @@ df_vermiform$group<-factor(df_vermiform$group, levels=c("STAN", "STAP", "RFFP"))
 ggplot(df_vermiform, aes(x=age, y=OTU, fill=group)) + geom_bar(stat="identity", position=position_dodge()) + geom_errorbar(aes(ymin=OTU-OTU_se, ymax=OTU+OTU_se), width=.4, position=position_dodge(.9))+ theme_classic() + theme(legend.position="right",axis.line=element_line(size = 1, color = "black"), axis.ticks.length = unit(.2, "cm"), axis.text = element_text( size = 12, color = "black"),                         axis.title = element_text(face="bold", size = 15, color = "black"), legend.text = element_text( size = 12),                           legend.title = element_text(face="bold", size = 15), legend.key.height = unit(.7, "cm")) +  scale_fill_manual(values=col, breaks=c("STAN", "STAP", "RFFP"), labels=c("STA-", "STA+", "RFF+"), name="Groups") + ylab("Number of OTUs") + xlab ("Age") + ylim(0, 650)
 ```
 
-![](fig/nb OTU appendix.png)<!-- -->
+![](fig/nb%20OTU%20appendix.png)<!-- -->
 
 __Statistics (comparison STA-/STA+)__
 
@@ -912,7 +912,7 @@ p.o$layers <- p.o$layers[-1]
 p.o
 ```
 
-![](fig/nMDS caecum appendix.png)<!-- -->
+![](fig/nMDS%20caecum%20appendix.png)<!-- -->
 
 __ADONIS to compare the difference of microbiome structure between caecum and appendix over time__
 
